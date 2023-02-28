@@ -7,15 +7,34 @@
 \tableofcontents
 
 \chapter{Einleitung}
+Der Gauß-Algorithmus ist eines der wichtigsten Lösungsverfahren zum Lösen linearer Gleichungssysteme.
+Es spielt eine tragende Rolle in der in vielen Bereichen der Mathematik und ist dennoch recht unkompliziert
+in der Ausführung. Aufgrund dieser Tatsachen habe ich mich dazu entschieden, in dieser Facharbeit den Algorithmus in verschiedener Weise zu implementieren, ihn zu analysieren,
+die verschieden Methoden zu vergleichen, Anwendungsmöglichkeiten aufzuzeigen und schlussendlich ein Fazit zu ziehen.
+
 \chapter{Theoretische Grundlagen}
 \section{Lineare Gleichungssysteme}
+Um zu verstehen, wie das Gaußschen-Eliminationsverfahren implementiert werden kann, wird sich erst einmal
+die Definition linearer Gleichungssysteme angeschaut.
+
+\newline
+\textbf{Definition:}
+Ein lineares Gleichungssystem ist in der linearen Algebra eine Menge linearer Gleichungen mit einer oder mehreren
+Unbekannten, die alle gleichzeitig erfüllt sein sollen.
+\newline
+Ein lineares Gleichungssystem hat folgende Form:
+\begin{eqnarray}
+    a_{11}x_{1}+ a_{12}x_{2}+...+ a_{1n}x_{n}     & = &  b_1\\
+    a_{21}x_{1}+ a_{22}x_{2}+...+ a_{2n}x_{n}     & = &  b_2\\
+    a_{11}x_{1}+ a_{12}x_{2}+...+ a_{1n}x_{n}     & = &  b_3\\
+\end{eqnarray}
 \section{Gaußsches Eliminationsverfahren}
 \chapter{Implementierung des Algorithmus}
 \section{Schritte des Verfahrens}
 \subsection{Brute-Force Methode}
-\subsection{Pivotsuche}
+\subsection{Pivot-Suche}
 \section{Vergleich der Methoden}
-\chapter{Anwendungen des Gauss-Eliminationsverfahrens}
+\chapter{Anwendungen des Gaußschen-Eliminationsverfahrens}
 \section{Lösung von linearen Gleichungssystemen}
 \section{Inversion von Matrizen}
 \section{Beispielanwendungen}
