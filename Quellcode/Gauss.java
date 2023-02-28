@@ -33,6 +33,7 @@ public class Gauss {
                 System.out.println(p1);
             }
         }
+        // TODO: Speichern der Double Werte in koeff[] (wenn kleiner index 4) und tuple[] (wenn index 4)
     }
 }
 
