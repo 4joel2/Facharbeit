@@ -1,3 +1,4 @@
+
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,31 +15,42 @@ public class Gauss {
         einlesen();
     }
 
-    private void parseCommandLine() {
-        // Hier kann der Code für die Verarbeitung der Befehlszeilenargumente eingefügt werden
-    }
-
     private static void einlesen() throws IOException {
         List<String> f = Files.readAllLines(datei, StandardCharsets.UTF_8);
-        for(int i = 0; i < f.size(); i++){
-            String pointer = f.get(i);
-            if(pointer.isEmpty() == true || pointer.charAt(0) == '#'){
+        int zeilenIndex = 0;
+        for (int i = 0; i < f.size(); i++) {
+            String zeile = f.get(i);
+            if (zeile.isEmpty() || zeile.charAt(0) == '#') {
                 continue;
             }
 
-            String[] pPointer =  pointer.replace(',', '.').split("\\s+");
-            for(int j = 0; j < pPointer.length; j++){
-                String p = pPointer[j];
-                double p1 = Double.parseDouble(p);
-                System.out.println(p1);
+            String[] zeilenElemente = zeile.replace(',', '.').split("\\s+");
+            for (int spaltenIndex = 0; spaltenIndex < zeilenElemente.length; spaltenIndex++) {
+                String element = zeilenElemente[spaltenIndex];
+                double wert = Double.parseDouble(element);
+                if (spaltenIndex < 3) {
+                    koeff[zeilenIndex][spaltenIndex] = wert;
+                } else {
+                    tuple[zeilenIndex] = wert;
+                }
             }
+            zeilenIndex++;
         }
-        // TODO: Speichern der Double Werte in koeff[] (wenn kleiner index 4) und tuple[] (wenn index 4)
+        System.out.println("Koeffizienten:");
+    for (int i = 0; i < koeff.length; i++) {
+        for (int j = 0; j < koeff[i].length; j++) {
+            System.out.print(koeff[i][j] + " ");
+        }
+        System.out.println();
+    }
+
+    System.out.println("Tupel:");
+    for (int i = 0; i < tuple.length; i++) {
+        System.out.print(tuple[i] + " ");
+    }
+    System.out.println();
     }
 }
-
-
-
 
 
 
