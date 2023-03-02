@@ -1,33 +1,47 @@
 \documentclass[a4paper, 12pt]{report}
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage[style=verbose-ibid ,backend=biber]{biblatex}
+\usepackage{csquotes}
+\addbibresource{../Facharbeit/literatur.bib}
 \title{Facharbeit Informatik}
 \author{Joel Mantik}
 \begin{document}
 \maketitle
+\begin{sloppypar}
 \tableofcontents
 
 \chapter{Einleitung}
-Der Gauß-Algorithmus ist eines der wichtigsten Lösungsverfahren zum Lösen linearer Gleichungssysteme.
-Es spielt eine tragende Rolle in der in vielen Bereichen der Mathematik und ist dennoch recht unkompliziert
-in der Ausführung. Aufgrund dieser Tatsachen habe ich mich dazu entschieden, in dieser Facharbeit den Algorithmus in verschiedener Weise zu implementieren, ihn zu analysieren,
-die verschieden Methoden zu vergleichen, Anwendungsmöglichkeiten aufzuzeigen und schlussendlich ein Fazit zu ziehen.
+Der Gauß-Algorithmus ist eins der wichtigsten Lösungsverfahren zum Lösen lineare
+r Gleichungssysteme.
+Er spielt eine tragende Rolle in vielen Bereichen der Mathematik und ist dennoch  recht unkompliziert.
+Aufgrund der Wichtigkeit, habe ich dazu entschieden, den Algorithmus in dieser
+Facharbeit zu implementieren,
+zu analysieren, und Anwendungsmöglichkeiten aufzuzeigen.
 
 \chapter{Theoretische Grundlagen}
+Der Gauß-Algorithmus ist ein Algorithmus, welcher beim Lösen von linearen Gleichungssystemen zum Einsatz kommt. Im folgenden Kapitel werden die mathematische Theorie
+von linearen Gleichungssystemen und dem Gauß-Algorithmus erläutert, welche die Grundlage für die spätere Implementierung sind.
 \section{Lineare Gleichungssysteme}
-Um zu verstehen, wie das Gaußschen-Eliminationsverfahren implementiert werden kann, wird sich erst einmal
-die Definition linearer Gleichungssysteme angeschaut.
-
-\newline
-\textbf{Definition:}
-Ein lineares Gleichungssystem ist in der linearen Algebra eine Menge linearer Gleichungen mit einer oder mehreren
-Unbekannten, die alle gleichzeitig erfüllt sein sollen.
-\newline
-Ein lineares Gleichungssystem hat folgende Form:
-\begin{eqnarray}
-    a_{11}x_{1}+ a_{12}x_{2}+...+ a_{1n}x_{n}     & = &  b_1\\
-    a_{21}x_{1}+ a_{22}x_{2}+...+ a_{2n}x_{n}     & = &  b_2\\
-    a_{11}x_{1}+ a_{12}x_{2}+...+ a_{1n}x_{n}     & = &  b_3\\
-\end{eqnarray}
+Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens dem ersten Grad vorkommt.
+Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m * n $ Matrix ist, $x$ ein n-dimensionaler Vektor von Unbekannten
+und b ein $m$-dimensionaler Vektor von Konstanten ist.
+Das Ziel eines solchen linearen Gleichungssystems ist es, eine Lösung für $x$ zu finden, die alle Gleichungen erfüllt.
+Hierbei gibt es drei Arten von Lösungen:
+\begin{enumerate}
+    \item Das Gleichungssystem hat genau \textit{eine} Lösung; es gibt genau eine Lösung, welche alle Gleichungen im System erfüllt. Die Lösungsmenge ist z. B. : $\mathbb{L} = \{ (x,y,z)| (1,2,3)\} $.
+    \item Das Gleichungssystem hat \textit{keine} Lösung, wenn es keine Lösung gibt, die alle Gleichungen erfüllt. Die Lösungsmenge ist eine leere Menge: $\mathbb{L} = \{ \}$.
+    \item Das Gleichungssystem hat \textit{unendlich viele} Lösungen, wenn es mehrere Lösungen gibt, die alle Gleichungen im System erfüllen.
+        Hierbei sind die verschiedenen Variablen voneinander abhängig. Die Lösungsmenge sieht beispielsweise wie folgt aus: \newline $ \mathbb{L} = \{(x, y, z)| (x = y * z, y\in \mathbb{R}, z \in \mathbb{R}) \} $.
+\end{enumerate}
+Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren:  \autocite{gramlich2018}
+\begin{align*}
+    a_{11}x_{1}+ a_{12}x_{2}+...+ a_{1n}x_{n} = b_1 \\
+    a_{21}x_{1}+ a_{22}x_{2}+...+ a_{2n}x_{n} = b_2\\
+    a_{11}x_{1}+ a_{12}x_{2}+...+ a_{1n}x_{n} = b_3
+\end{align*}
 \section{Gaußsches Eliminationsverfahren}
 \chapter{Implementierung des Algorithmus}
 \section{Schritte des Verfahrens}
@@ -41,4 +55,5 @@ Ein lineares Gleichungssystem hat folgende Form:
 \chapter{Abwägungen}
 \section{Vor- und Nachteile im Vergleich zu anderen Methoden}
 \chapter{Fazit}
+\end{sloppypar}
 \end{document}
