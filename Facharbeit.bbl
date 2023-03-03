@@ -1,0 +1,50 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{gramlich2021}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fa6a751dd619bc8a72041a69ba87bf46}{%
+           family={Gramlich},
+           familyi={G\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Carl Hanser Verlag GmbH Co KG}%
+      }
+      \strng{namehash}{fa6a751dd619bc8a72041a69ba87bf46}
+      \strng{fullhash}{fa6a751dd619bc8a72041a69ba87bf46}
+      \strng{bibnamehash}{fa6a751dd619bc8a72041a69ba87bf46}
+      \strng{authorbibnamehash}{fa6a751dd619bc8a72041a69ba87bf46}
+      \strng{authornamehash}{fa6a751dd619bc8a72041a69ba87bf46}
+      \strng{authorfullhash}{fa6a751dd619bc8a72041a69ba87bf46}
+      \field{labelalpha}{Gra21}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lineare Algebra: Eine Einführung}
+      \field{year}{2021}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

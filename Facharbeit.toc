@@ -1,17 +1,19 @@
-\babel@toc {german}{}\relax 
+\babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{2}{}%
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{}%
 \contentsline {section}{\numberline {2.1}Lineare Gleichungssysteme}{3}{}%
-\contentsline {section}{\numberline {2.2}Gaußsches Eliminationsverfahren}{3}{}%
-\contentsline {chapter}{\numberline {3}Implementierung des Algorithmus}{4}{}%
-\contentsline {section}{\numberline {3.1}Schritte des Verfahrens}{4}{}%
-\contentsline {subsection}{\numberline {3.1.1}Brute-Force Methode}{4}{}%
-\contentsline {subsection}{\numberline {3.1.2}Pivot-Suche}{4}{}%
-\contentsline {section}{\numberline {3.2}Vergleich der Methoden}{4}{}%
-\contentsline {chapter}{\numberline {4}Anwendungen des Gaußschen-Eliminationsverfahrens}{5}{}%
-\contentsline {section}{\numberline {4.1}Lösung von linearen Gleichungssystemen}{5}{}%
-\contentsline {section}{\numberline {4.2}Inversion von Matrizen}{5}{}%
-\contentsline {section}{\numberline {4.3}Beispielanwendungen}{5}{}%
-\contentsline {chapter}{\numberline {5}Abwägungen}{6}{}%
-\contentsline {section}{\numberline {5.1}Vor- und Nachteile im Vergleich zu anderen Methoden}{6}{}%
-\contentsline {chapter}{\numberline {6}Fazit}{7}{}%
+\contentsline {section}{\numberline {2.2}Gaußsches Eliminationsverfahren}{4}{}%
+\contentsline {chapter}{\numberline {3}Implementierung des Algorithmus}{5}{}%
+\contentsline {section}{\numberline {3.1}Schritte des Verfahrens}{5}{}%
+\contentsline {section}{\numberline {3.2}Erläuterung des Quellcodes}{6}{}%
+\contentsline {section}{\numberline {3.3}Beispielrechungen}{6}{}%
+\contentsline {section}{\numberline {3.4}Schwächen des Algorithmus}{6}{}%
+\contentsline {chapter}{\numberline {4}Anwendungen des Gaußschen-Eliminationsverfahrens}{7}{}%
+\contentsline {section}{\numberline {4.1}Lösung von linearen Gleichungssystemen}{7}{}%
+\contentsline {section}{\numberline {4.2}Inversion von Matrizen}{7}{}%
+\contentsline {section}{\numberline {4.3}Beispielanwendungen}{7}{}%
+\contentsline {chapter}{\numberline {5}Abwägungen}{8}{}%
+\contentsline {section}{\numberline {5.1}Vorteile im Vergleich zu anderen Methoden}{8}{}%
+\contentsline {section}{\numberline {5.2}Nachteile im Vergleich zu anderen Methoden}{8}{}%
+\contentsline {chapter}{\numberline {6}Fazit}{9}{}%
+\contentsline {chapter}{\numberline {7}Anhang}{10}{}%
