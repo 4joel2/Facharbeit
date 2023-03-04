@@ -7,37 +7,37 @@ import java.io.IOException;
 import java.util.List;
 
 public class Gauss {
-    static Path datei = Paths.get("./input2");
-    static double[][] koeff = new double[3][4];
-    static double[][] solMatrix = new double[3][4];
+    static Path datei = Paths.get("./input1.txt"); // Einlesen der Datei
+    static double[][] koeff = new double[3][4]; // Initialierung der erweiterten Koeffizienten Matrix
+    static double[][] solMatrix = new double[3][4]; // Initialierung der Lösungsmatrix
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { // Main Methode welche alle Methoden ausführt
         einlesen();
         ausgabe(koeff, "Eingangsmatrix");
         gaussAlgo1();
         ausgabe(solMatrix, "Lösungsmatrix");
     }
 
-    private static void einlesen() throws IOException {
+    private static void einlesen() throws IOException { // Einlesen der Koeffizienten aus Datei
         List<String> f = Files.readAllLines(datei, StandardCharsets.UTF_8);
         int zeilenIndex = 0;
         for (int i = 0; i < f.size(); i++) {
             String zeile = f.get(i);
-            if (zeile.isEmpty() || zeile.charAt(0) == '#') {
+            if (zeile.isEmpty() || zeile.charAt(0) == '#') { // Kommentare und Whitespaces der input Datei werden ignoriert
                 continue;
             }
 
-            String[] zeilenElemente = zeile.replace(',', '.').split("\\s+");
+            String[] zeilenElemente = zeile.replace(',', '.').split("\\s+"); // Kommata werden zu Punkten
             for (int spaltenIndex = 0; spaltenIndex < zeilenElemente.length; spaltenIndex++) {
                 String element = zeilenElemente[spaltenIndex];
                 double wert = Double.parseDouble(element);
-                koeff[zeilenIndex][spaltenIndex] = wert;
+                koeff[zeilenIndex][spaltenIndex] = wert; // Der Koeffizientenmatrix werden die double Werte zugewiesen, welche in wert gespeichert wurden
             }
 
             zeilenIndex++;
          }
     }
-    private static void ausgabe(double[][] mx, String matrixName){
+    private static void ausgabe(double[][] mx, String matrixName){ // Ausgabe der Matrizen
 
         System.out.println("Die " + matrixName + ":");
         for (int j = 0; j < mx.length; j++) {
@@ -52,17 +52,23 @@ public class Gauss {
         copyLine(0);// Erste Zeile der Originalmatrix wird in Lösungs Matrix kopiert
         copyLine(1);
         copyLine(2);
-        for(int zeilen = 1; zeilen < solMatrix.length; zeilen++) { // Iteriert wird nur über Zeile 2,3 Z.1 bleibt statisch.
-             // TODO: Pivotisierung einführen
-
-            double multiplikator = -solMatrix[zeilen][0] / solMatrix[0][0]; // verwenden x = -b/a um den multiplikator zu finden mit dem Zeilen 0 werden
-            multiplyAndAdd(0, zeilen, multiplikator);
+        for (int zeile = 0; zeile < solMatrix.length - 1; zeile++) {
+        int maxZeile = zeile;
+        for (int i = zeile + 1; i < solMatrix.length; i++) { // Diese Schleife sucht in der aktuellen Spalte (durch die Variable zeile indiziert) nach dem Element mit dem größten absoluten Wert und merkt sich die Zeilennummer dieses Elements in der Variable maxZeile.
+            if (Math.abs(solMatrix[i][zeile]) > Math.abs(solMatrix[maxZeile][zeile])) {
+                maxZeile = i;
+            }
+        }
+        if (maxZeile != zeile) { // Wenn das Element mit dem größten absoluten Wert in einer anderen Zeile als der aktuellen Zeile gefunden wurde, werden die beiden Zeilen vertauscht. Dies ist die Pivotisierung.
+            double[] temp = solMatrix[zeile];
+            solMatrix[zeile] = solMatrix[maxZeile];
+            solMatrix[maxZeile] = temp;
         }
 
-        for(int zeilen = 2; zeilen < solMatrix.length; zeilen++) { // Iteriert wird nur über Zeile 2,3 Z.1 bleibt statisch.
-             // TODO: Pivotisierung einführen
-            double multiplikator = -solMatrix[zeilen][1] / solMatrix[1][1]; // verwenden x = -b/a um den multiplikator zu finden mit dem Zeilen 0 werden
-            multiplyAndAdd(1, zeilen, multiplikator);
+        for (int i = zeile + 1; i < solMatrix.length; i++) { // Die Koeffizienten werden durch x = -b/a 0
+            double factor = -solMatrix[i][zeile] / solMatrix[zeile][zeile];
+            multiplyAndAdd(zeile, i, factor);
+        }
         }
 
         for(int zeilen = solMatrix.length-1; zeilen >= 0; zeilen--){
@@ -72,7 +78,7 @@ public class Gauss {
                 solMatrix[zeilen][spalte] /= diagonale;
 
             }
-            double result = solMatrix[zeilen][solMatrix[zeilen].length - 1];
+            double result = solMatrix[zeilen][solMatrix[zeilen].length - 1]; // Durch rücksubstitution werden die gefundenen Werte RÜCKWÄRTS in die übere Zeile eingesetzt und so x und y errechnet
             for(int rueckZeilen = zeilen - 1; rueckZeilen >= 0; rueckZeilen--){
                 solMatrix[rueckZeilen][solMatrix[zeilen].length - 1] -= result * solMatrix[rueckZeilen][zeilen];
                 solMatrix[rueckZeilen][zeilen] = 0.0;
@@ -81,13 +87,13 @@ public class Gauss {
     }
 
 
-    private static void copyLine(int line){
+    private static void copyLine(int line){ // Diese Methode setzt die Endgleichung = erw. Koeffizientenmatrix
         for(int i = 0; i < koeff[line].length; i++) {
             solMatrix[line][i] = koeff[line][i];
         }
     }
 
-    private static void multiplyAndAdd(int lineOne, int lineTwo, double factor) {
+    private static void multiplyAndAdd(int lineOne, int lineTwo, double factor) { // x = -b/a wird durchgeführt
         for(int spalten = 0; spalten < solMatrix[lineOne].length; spalten++){
             solMatrix[lineTwo][spalten] = (solMatrix[lineOne][spalten] * factor) + solMatrix[lineTwo][spalten];
         }
