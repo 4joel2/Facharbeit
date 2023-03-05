@@ -19,6 +19,31 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{fischer14}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fad316c1ade2382d28e85754c3839cdc}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Spektrum}%
+      }
+      \strng{namehash}{fad316c1ade2382d28e85754c3839cdc}
+      \strng{fullhash}{fad316c1ade2382d28e85754c3839cdc}
+      \strng{bibnamehash}{fad316c1ade2382d28e85754c3839cdc}
+      \strng{authorbibnamehash}{fad316c1ade2382d28e85754c3839cdc}
+      \strng{authornamehash}{fad316c1ade2382d28e85754c3839cdc}
+      \strng{authorfullhash}{fad316c1ade2382d28e85754c3839cdc}
+      \field{labelalpha}{Fis14}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lineare Algebra: Eine Einführung für Studien Anfänger}
+      \field{year}{2014}
+    \endentry
     \entry{gramlich2021}{book}{}
       \name{author}{1}{}{%
         {{hash=fa6a751dd619bc8a72041a69ba87bf46}{%

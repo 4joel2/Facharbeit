@@ -1,19 +1,19 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {chapter}{\numberline {1}Einleitung}{2}{}%
-\contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{}%
-\contentsline {section}{\numberline {2.1}Lineare Gleichungssysteme}{3}{}%
-\contentsline {section}{\numberline {2.2}Gaußsches Eliminationsverfahren}{4}{}%
-\contentsline {chapter}{\numberline {3}Implementierung des Algorithmus}{5}{}%
-\contentsline {section}{\numberline {3.1}Schritte des Verfahrens}{5}{}%
-\contentsline {section}{\numberline {3.2}Erläuterung des Quellcodes}{6}{}%
-\contentsline {section}{\numberline {3.3}Beispielrechungen}{6}{}%
-\contentsline {section}{\numberline {3.4}Schwächen des Algorithmus}{6}{}%
-\contentsline {chapter}{\numberline {4}Anwendungen des Gaußschen-Eliminationsverfahrens}{7}{}%
-\contentsline {section}{\numberline {4.1}Lösung von linearen Gleichungssystemen}{7}{}%
-\contentsline {section}{\numberline {4.2}Inversion von Matrizen}{7}{}%
-\contentsline {section}{\numberline {4.3}Beispielanwendungen}{7}{}%
-\contentsline {chapter}{\numberline {5}Abwägungen}{8}{}%
-\contentsline {section}{\numberline {5.1}Vorteile im Vergleich zu anderen Methoden}{8}{}%
-\contentsline {section}{\numberline {5.2}Nachteile im Vergleich zu anderen Methoden}{8}{}%
-\contentsline {chapter}{\numberline {6}Fazit}{9}{}%
-\contentsline {chapter}{\numberline {7}Anhang}{10}{}%
+\contentsline {chapter}{\numberline {1}Einleitung}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Lineare Gleichungssysteme}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Gaußsches Eliminationsverfahren}{4}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Implementierung des Algorithmus}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Schritte des Verfahrens}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Erläuterung des Quellcodes}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Beispiel Rechungen}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Schwächen des Algorithmus}{6}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Anwendungen des Gaußschen-Eliminationsverfahrens}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lösung von linearen Gleichungssystemen}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Inversion von Matrizen}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Beispielanwendungen}{7}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Abwägungen}{8}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Vorteile im Vergleich zu anderen Methoden}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Nachteile im Vergleich zu anderen Methoden}{8}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Fazit}{9}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Anhang}{10}{chapter.7}%

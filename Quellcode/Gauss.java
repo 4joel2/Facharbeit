@@ -9,13 +9,13 @@ import java.util.List;
 public class Gauss {
     static Path datei = Paths.get("./input1.txt"); // Einlesen der Datei
     static double[][] koeff = new double[3][4]; // Initialierung der erweiterten Koeffizienten Matrix
-    static double[][] solMatrix = new double[3][4]; // Initialierung der Lösungsmatrix
+    static double[][] solMatrix = new double[3][4]; // Initialierung der Loesungsmatrix
 
-    public static void main(String[] args) throws IOException { // Main Methode welche alle Methoden ausführt
+    public static void main(String[] args) throws IOException { // Main Methode welche alle Methoden ausfuehrt
         einlesen();
         ausgabe(koeff, "Eingangsmatrix");
         gaussAlgo1();
-        ausgabe(solMatrix, "Lösungsmatrix");
+        ausgabe(solMatrix, "Loesungsmatrix");
     }
 
     private static void einlesen() throws IOException { // Einlesen der Koeffizienten aus Datei
@@ -49,17 +49,17 @@ public class Gauss {
     }
 
     private static void gaussAlgo1() {
-        copyLine(0);// Erste Zeile der Originalmatrix wird in Lösungs Matrix kopiert
+        copyLine(0);// Erste Zeile der Originalmatrix wird in Loesungs Matrix kopiert
         copyLine(1);
         copyLine(2);
         for (int zeile = 0; zeile < solMatrix.length - 1; zeile++) {
         int maxZeile = zeile;
-        for (int i = zeile + 1; i < solMatrix.length; i++) { // Diese Schleife sucht in der aktuellen Spalte (durch die Variable zeile indiziert) nach dem Element mit dem größten absoluten Wert und merkt sich die Zeilennummer dieses Elements in der Variable maxZeile.
+        for (int i = zeile + 1; i < solMatrix.length; i++) { // Diese Schleife sucht in der aktuellen Spalte (durch die Variable zeile indiziert) nach dem Element mit dem groessten absoluten Wert und merkt sich die Zeilennummer dieses Elements in der Variable maxZeile.
             if (Math.abs(solMatrix[i][zeile]) > Math.abs(solMatrix[maxZeile][zeile])) {
                 maxZeile = i;
             }
         }
-        if (maxZeile != zeile) { // Wenn das Element mit dem größten absoluten Wert in einer anderen Zeile als der aktuellen Zeile gefunden wurde, werden die beiden Zeilen vertauscht. Dies ist die Pivotisierung.
+        if (maxZeile != zeile) { // Wenn das Element mit dem groessten absoluten Wert in einer anderen Zeile als der aktuellen Zeile gefunden wurde, werden die beiden Zeilen vertauscht. Dies ist die Pivotisierung.
             double[] temp = solMatrix[zeile];
             solMatrix[zeile] = solMatrix[maxZeile];
             solMatrix[maxZeile] = temp;
@@ -78,7 +78,7 @@ public class Gauss {
                 solMatrix[zeilen][spalte] /= diagonale;
 
             }
-            double result = solMatrix[zeilen][solMatrix[zeilen].length - 1]; // Durch rücksubstitution werden die gefundenen Werte RÜCKWÄRTS in die übere Zeile eingesetzt und so x und y errechnet
+            double result = solMatrix[zeilen][solMatrix[zeilen].length - 1]; // Durch ruecksubstitution werden die gefundenen Werte RUECKWAERTS in die uebere Zeile eingesetzt und so x und y errechnet
             for(int rueckZeilen = zeilen - 1; rueckZeilen >= 0; rueckZeilen--){
                 solMatrix[rueckZeilen][solMatrix[zeilen].length - 1] -= result * solMatrix[rueckZeilen][zeilen];
                 solMatrix[rueckZeilen][zeilen] = 0.0;
@@ -93,7 +93,7 @@ public class Gauss {
         }
     }
 
-    private static void multiplyAndAdd(int lineOne, int lineTwo, double factor) { // x = -b/a wird durchgeführt
+    private static void multiplyAndAdd(int lineOne, int lineTwo, double factor) { // x = -b/a wird durchgefuehrt
         for(int spalten = 0; spalten < solMatrix[lineOne].length; spalten++){
             solMatrix[lineTwo][spalten] = (solMatrix[lineOne][spalten] * factor) + solMatrix[lineTwo][spalten];
         }

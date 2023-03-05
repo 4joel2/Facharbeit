@@ -1,11 +1,29 @@
 \documentclass[a4paper, 12pt]{report}
 \usepackage[ngerman]{babel}
 \usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    urlcolor=black,
+    pdftitle={Facharbeit},
+    }
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{bbm}
 \usepackage{graphicx}
 \usepackage[style=alphabetic ,backend=biber]{biblatex}
 \usepackage{csquotes}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ right=40mm,
+ top=25mm,
+ bottom=40mm
+ }
+
 \addbibresource{../Facharbeit/literatur.bib}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -55,20 +73,21 @@ Facharbeit zu implementieren,
 zu analysieren, und Anwendungsmöglichkeiten aufzuzeigen.
 
 \chapter{Theoretische Grundlagen}
-Der Gauß-Algorithmus ist ein Algorithmus, welcher beim Lösen von linearen Gleichungssystemen zum Einsatz kommt. Im folgenden Kapitel wird die mathematische Theorie
-von linearen Gleichungssystemen und dem Gauß-Algorithmus erläutert, welche die Grundlage für die spätere Implementierung sind.
+Der Gauß-Algorithmus ist ein Algorithmus, welcher beim Lösen von linearen Gleichungssystemen zum Einsatz kommt. Im folgenden Kapitel wird die mathematische
+Theorie erläutert und die Definitionen genannt, welche die Grundlage für die spätere Implementierung sind.
 Die folgenden Definitionen sind sinngemäß aus \cite{gramlich2021} entnommen.
 \section{Lineare Gleichungssysteme}
 Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens dem ersten Grad vorkommt.
 Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m * n $ Matrix ist, $x$ ein n-dimensionaler Vektor von Unbekannten
 und b ein $m$-dimensionaler Vektor von Konstanten ist.
 Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren. :
-\begin{eqnarray*}
-    a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &=& b_1 \\
-    a_{21}x_{1}+ a_{22}x_{2}+\hdots+ a_{2n}x_{n} &=& b_2\\
-                                                 &\vdots&  \\
+\begin{align}
+\label{eq:linGle}
+    a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &=& b_1 \nonumber \\
+    a_{21}x_{1}+ a_{22}x_{2}+\hdots+ a_{2n}x_{n} &=& b_2 \nonumber\\
+                                                 &\vdots&  \nonumber \\
     a_{m1}x_{1}+ a_{m2}x_2+\hdots+a_{mn}x_{n} &=& b_{m}
-\end{eqnarray*}
+\end{align}
 \newpage
 Das Ziel eines solchen linearen Gleichungssystems ist es, eine Lösung für $x$ zu finden, die alle Gleichungen erfüllt.
 Hierbei gibt es drei Arten von Lösungen:
@@ -80,12 +99,41 @@ Hierbei gibt es drei Arten von Lösungen:
 \end{enumerate}
 
 
-\section{Gaußsches Eliminationsverfahren}
+\section{Gaußsches Eliminationsverfahren} \label{2.2}
+Für die folgenden Definitionen und Erläuterungen wurde sinngemäß auf \cite{fischer14} zurückgegriffen. \newline
+Gegeben sei das Allgemeine Lineare Gleichungssystem \ref{eq:linGle}. Gesucht ist nun die Menge der $ (x_1, \hdots ,x_n ) \in \mathbb{R}^n $, die alle Gleichungen erfüllen.
+Dies erreicht man indem man folgendermaßen vorgeht.:
+\begin{enumerate}
+    \item Die erweiterte Koeffizientenmatrix $ (A, b) $ aufschreiben.:
+        \begin{equation}
+            (A, b):=
+            \begin{pmatrix}
+                a_{11} & \hdots &  a_{1n} &  b_1  \\
+                \vdots & \vdots &  \vdots & \vdots &  \\
+                a_{m1} &  \hdots &  a_{mn} &  b_m \\
+            \end{pmatrix}
+        \end{equation}
+    \item $A$ auf Zeilenstufenform brinen, und dabei die Spalte $b$ mit umformen, wobei man das $ \lambda$-fache der i-ten Zeile zur k-ten Zeile addiert, hierbei muss $ \lambda \neq 0 $ und $ i \neq k$ sein.
+        Für eine 3x3 Matrix sähe die Zeilenstufenform am Ende so aus.:
+          \begin{equation}
+              A =
+             \begin{pmatrix}
+                 a_{11} & a_{12} &  a_{13} &  b_1  \\
+                 0 & a_{22} &  a_{23} & b_2 &  \\
+                0 &  0  &  a_{33} &  b_3 \\
+            \end{pmatrix}
+          \end{equation} \newline
+          Analog wäre die Zeilenstufenform für $ m * n $ Matrizen, wobei mehr Nullen pro Zeile exisitieren müssten, um die Zeilenstufenform zu erreichen.
+    \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermiteln. Man teilt die letzte Spalte durch den Wert des Koeffizienten, so dass die Variable alleine steht.
+          Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
+\end{enumerate}
+
+
+
 \chapter{Implementierung des Algorithmus}
 Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache "Java" verwendet.
 \section{Schritte des Verfahrens}
-Grundlegend lässt sich der Algorithmus durch folgende Schritte implementieren, es gibt bei gewissen Implementationen (wie der Brute-Force Methode)
-zwar kleine Abweichungen jedoch folgen auch diesen demselben Prinzip.
+Grundlegend lässt sich der Algorithmus durch die selben Schritte wie in \ref{2.2} implementieren, wobei man diese allerdings noch feiner unterteilen muss.:
 \begin{enumerate}
     \item Eingabe: Ein lineares Gleichungssystem $ A_x=b $ mit einer $ n * n $ Matrix $A$ und einem \textit{n}-dimensionalem Vektor b.
     \item Initialisierung: % weiter erläutern %
@@ -102,8 +150,11 @@ Der Aufbau des Algorithmus wird in folgendem Diagramm deutlich:
 \section{Erläuterung des Quellcodes}
 
 
-\section{Beispielrechungen}
+\section{Beispiel Rechungen}
 \section{Schwächen des Algorithmus}
+Der Algorithmus in seiner Form hat Schwächen aufzuweisen:
+Zum einen kann es durch die Verwendung vom Datentyp Double und die mehrfache Rechnung mit denselben Werten zu Rundungsfehlern kommen.
+Zum anderen hat der Algorithmus bei komplizierten Martizzen mit vielen Zeilen und Spalten eine große Laufzeit, die Worstcase Laufzeit würde aufgrund von doppelten for-Schleifen $ O(n*n) $ betragen.
 \chapter{Anwendungen des Gaußschen-Eliminationsverfahrens}
 \section{Lösung von linearen Gleichungssystemen}
 \section{Inversion von Matrizen}
