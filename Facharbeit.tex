@@ -113,17 +113,11 @@ Dies erreicht man indem man folgendermaßen vorgeht.:
                 a_{m1} &  \hdots &  a_{mn} &  b_m \\
             \end{pmatrix}
         \end{equation}
-    \item $A$ auf Zeilenstufenform brinen, und dabei die Spalte $b$ mit umformen, wobei man das $ \lambda$-fache der i-ten Zeile zur k-ten Zeile addiert, hierbei muss $ \lambda \neq 0 $ und $ i \neq k$ sein.
-        Für eine 3x3 Matrix sähe die Zeilenstufenform am Ende so aus.:
-          \begin{equation}
-              A =
-             \begin{pmatrix}
-                 a_{11} & a_{12} &  a_{13} &  b_1  \\
-                 0 & a_{22} &  a_{23} & b_2 &  \\
-                0 &  0  &  a_{33} &  b_3 \\
-            \end{pmatrix}
-          \end{equation} \newline
-          Analog wäre die Zeilenstufenform für $ m * n $ Matrizen, wobei mehr Nullen pro Zeile exisitieren müssten, um die Zeilenstufenform zu erreichen.
+    \item $A$ durch elementare Zeilentransformationen, also Vertauschen von Zeilen, Multiplikation einer Zeile mit einer Zahl $\neq 0 $ oder Addition des Vielfachen von einer Zeile zu einer anderen Zeile auf Zeilenstufenform bringen.
+        Eine $ m * n $-Matrix A heißt in \textit{Zeilenstufenform}, wenn sie von der folgenden Form ist: \newline \newline
+        \includegraphics[width=350px]{"./Zeilenstufenform.jpeg"} \newline \newline
+        Dabei steht ∗ für eine beliebige Zahl, und die freien Plätze sind alle mit Nullen besetzt. Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivotelement der Zeile genannt.
+        Das Pivotelement der $(i + 1)$-ten Zeile steht immer rechts des Pivotelementes der i-ten Zeile, und alle Einträge oberhalb eines Pivotelementes sind gleich Null.
     \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermiteln. Man teilt die letzte Spalte durch den Wert des Koeffizienten, so dass die Variable alleine steht.
           Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
 \end{enumerate}
@@ -133,12 +127,11 @@ Dies erreicht man indem man folgendermaßen vorgeht.:
 \chapter{Implementierung des Algorithmus}
 Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache "Java" verwendet.
 \section{Schritte des Verfahrens}
-Grundlegend lässt sich der Algorithmus durch die selben Schritte wie in \ref{2.2} implementieren, wobei man diese allerdings noch feiner unterteilen muss.:
+Grundlegend lässt sich der Algorithmus durch dieselben Schritte wie in \ref{2.2} implementieren, wobei man diese allerdings noch feiner unterteilen muss.:
 \begin{enumerate}
     \item Eingabe: Ein lineares Gleichungssystem $ A_x=b $ mit einer $ n * n $ Matrix $A$ und einem \textit{n}-dimensionalem Vektor b.
-    \item Initialisierung: % weiter erläutern %
     \item Pivotisierung: Finden des größten Elements $a_{ki}$ in der Spalte von $A$ unterhalb der Diagonalen und tauschen der Zeilen $k$ und $i$ von $A$ und $B$.
-    \item Elimination: %...%
+    \item Elimination:  Bei der Elimination wird eine Zeile oder das Vielfache der Zeile, (in diesem Algorithmus von der Pivotisierung bestimmt), zur nächsten Zeile addiert, so dass ein Koeffizient den Wert 0 annimmt.
     \item Rückwärtssubstitution: %...%
 \end{enumerate}
 Der Aufbau des Algorithmus wird in folgendem Diagramm deutlich:
@@ -150,15 +143,22 @@ Der Aufbau des Algorithmus wird in folgendem Diagramm deutlich:
 \section{Erläuterung des Quellcodes}
 
 
-\section{Beispiel Rechungen}
+\section{Beispiel Rechnungen}
 \section{Schwächen des Algorithmus}
 Der Algorithmus in seiner Form hat Schwächen aufzuweisen:
 Zum einen kann es durch die Verwendung vom Datentyp Double und die mehrfache Rechnung mit denselben Werten zu Rundungsfehlern kommen.
 Zum anderen hat der Algorithmus bei komplizierten Martizzen mit vielen Zeilen und Spalten eine große Laufzeit, die Worstcase Laufzeit würde aufgrund von doppelten for-Schleifen $ O(n*n) $ betragen.
-\chapter{Anwendungen des Gaußschen-Eliminationsverfahrens}
-\section{Lösung von linearen Gleichungssystemen}
-\section{Inversion von Matrizen}
-\section{Beispielanwendungen}
+\chapter{Anwendungsbereiche des Gaußschen-Eliminationsverfahrens in der Informatik}
+Der Algorithmus spielt in der Informatik aufgrund seiner Simplizität eine tragende Rolle in vielen Teilbereichen, wie der Kryptografie, der Computergrafik oder der Datenanalyse. Die Anwendungsmöglichkeiten, in diesen werden im Folgenden erläutert.
+\section{Kryptografie}
+Das Gauss'sche Eliminationsverfahren kann verwendet werden, um modulare Gleichungen zu lösen, die in der Kryptografie häufig auftreten.
+Zum Beispiel wird das Verfahren bei der Berechnung von Schlüsseln in asymmetrischen Kryptosystemen wie RSA eingesetzt. Hierbei wird mit dem Gaußalgorithmus eine Primfaktorzerlegung durchgeführt, die dann
+verwendet um Schlüssel in asymmetrischen Kryptosystemen zu verwenden.
+\section{Computergrafik}
+In der 3D-Computergrafik werden 4x4-Matrizen verwendet, um Objekte im Raum zu transformieren. Diese Matrizen enthalten Informationen über Translationen, Rotationen und Skalierungen von Objekten. Das Gauss'sche Eliminationsverfahren wird verwendet, um die inverse Matrix zu berechnen, die dann verwendet wird, um die Transformationsoperationen umzukehren. Die inverse Matrix wird auch dazu verwendet, um Normale von 3D-Objekten zu transformieren, um sie in eine konsistente Richtung zu bringen, was wichtig ist für Beleuchtungs- und Schattierungsberechnungen.
+
+\section{Datenanalyse}
+Das Gauss'sche Eliminationsverfahren wird in der linearen Regression eingesetzt, um die beste Anpassung einer linearen Funktion an gegebene Daten zu finden. Es wird verwendet, um die Parameter der Funktion zu berechnen, die am besten zu den Daten passen, indem es die Summe der Quadrate der Fehler minimiert. Die lineare Regression ist ein wichtiges Werkzeug in der Datenanalyse, um Beziehungen zwischen Variablen zu identifizieren und Vorhersagen über zukünftige Daten zu treffen. Das Verfahren kann auch dazu verwendet werden, um die Koeffizienten eines linearen Gleichungssystems zu lösen, das in der Datenanalyse oder der Signalverarbeitung verwendet wird.
 \chapter{Abwägungen}
 \section{Vorteile im Vergleich zu anderen Methoden}
 \section{Nachteile im Vergleich zu anderen Methoden}

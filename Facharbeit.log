@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  5 MAR 2023 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  9 MAR 2023 10:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**/tmp/nvim.joel/RCZEQk/2
-(/tmp/nvim.joel/RCZEQk/2
+**/tmp/nvim.joel/BMzEk9/2
+(/tmp/nvim.joel/BMzEk9/2
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
@@ -794,32 +794,60 @@ Kapitel 1.
 Kapitel 2.
 [3
 
-] [4]
+]
+<./Zeilenstufenform.jpeg, id=124, 951.555pt x 239.89626pt>
+File: ./Zeilenstufenform.jpeg Graphic file (type jpg)
+<use ./Zeilenstufenform.jpeg>
+Package pdftex.def Info: ./Zeilenstufenform.jpeg  used on input line 118.
+(pdftex.def)             Requested size: 351.31378pt x 88.56987pt.
+
+
+! LaTeX Error: Unicode character ∗ (U+2217)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119         Dabei steht ∗
+                              für eine beliebige Zahl, und die freien Plät...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--121
+
+ []
+
+[4 <./Zeilenstufenform.jpeg>] [5]
 Kapitel 3.
-
-LaTeX Warning: Reference `2.2' on page 5 undefined on input line 136.
-
-<./gaussuml.png, id=139, 230.8625pt x 210.7875pt>
+<./gaussuml.png, id=145, 230.8625pt x 210.7875pt>
 File: ./gaussuml.png Graphic file (type png)
 <use ./gaussuml.png>
-Package pdftex.def Info: ./gaussuml.png  used on input line 147.
+Package pdftex.def Info: ./gaussuml.png  used on input line 140.
 (pdftex.def)             Requested size: 150.56305pt x 137.47018pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5
+[6
 
-] [6 <./gaussuml.png>]
+] [7 <./gaussuml.png>]
 Kapitel 4.
-[7
-
-]
-Kapitel 5.
 [8
+
+] [9]
+Kapitel 5.
+[10
 
 ]
 Kapitel 6.
-[9
+[11
 
 ]
 Kapitel 7.
@@ -829,31 +857,25 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 167.
 
-(./Quellcode/Gauss.java [10
+(./Quellcode/Gauss.java [12
 
-] [11]) [12] [13
+] [13]) [14] [15
 
 ] (./Facharbeit.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Facharbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 96FFA18811DACF8D3E2596168D591646;3224.
+(rerunfilecheck)             Checksum: 2A9B48500FAB16E268B87968B19DBD91;3140.
 Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
 \openout1 = `Facharbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21520 strings out of 476091
- 365330 string characters out of 5791548
+ 21529 strings out of 476091
+ 365555 string characters out of 5791548
  2317330 words of memory out of 5000000
- 41496 multiletter control sequences out of 15000+600000
+ 41503 multiletter control sequences out of 15000+600000
  522033 words of font info for 70 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 75i,9n,76p,692b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,76p,708b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -866,10 +888,10 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Facharbeit.pdf (14 pages, 178614 bytes).
+Output written on Facharbeit.pdf (16 pages, 194342 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
+ 389 PDF objects out of 1000 (max. 8388607)
+ 340 compressed objects within 4 object streams
  154 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
