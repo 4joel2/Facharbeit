@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
-    \entry{fischer14}{book}{}
+    \entry{2}{book}{}
       \name{author}{1}{}{%
         {{hash=fad316c1ade2382d28e85754c3839cdc}{%
            family={Fischer},
@@ -44,7 +44,7 @@
       \field{title}{Lineare Algebra: Eine Einführung für Studien Anfänger}
       \field{year}{2014}
     \endentry
-    \entry{gramlich2021}{book}{}
+    \entry{1}{book}{}
       \name{author}{1}{}{%
         {{hash=fa6a751dd619bc8a72041a69ba87bf46}{%
            family={Gramlich},
@@ -68,6 +68,36 @@
       \field{labeltitlesource}{title}
       \field{title}{Lineare Algebra: Eine Einführung}
       \field{year}{2021}
+    \endentry
+    \entry{3}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ceabf072ae17f8b54e64986c0f958b98}{%
+           family={Karpfinger},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b535fa74e2e41c23849aec802f2e8160}{%
+           family={Kiechle},
+           familyi={K\bibinitperiod},
+           given={Hubert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Vieweg+Teubner}%
+      }
+      \strng{namehash}{103e9a3f526d7234a36e7420918a630c}
+      \strng{fullhash}{103e9a3f526d7234a36e7420918a630c}
+      \strng{bibnamehash}{103e9a3f526d7234a36e7420918a630c}
+      \strng{authorbibnamehash}{103e9a3f526d7234a36e7420918a630c}
+      \strng{authornamehash}{103e9a3f526d7234a36e7420918a630c}
+      \strng{authorfullhash}{103e9a3f526d7234a36e7420918a630c}
+      \field{labelalpha}{KK10}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Kryptologie, Algebraische Methoden und Algorithmen}
+      \field{year}{2010}
     \endentry
   \enddatalist
 \endrefsection

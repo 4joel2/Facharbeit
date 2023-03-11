@@ -3,17 +3,16 @@
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Lineare Gleichungssysteme}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Gaußsches Eliminationsverfahren}{4}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Implementierung des Algorithmus}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Schritte des Verfahrens}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Erläuterung des Quellcodes}{7}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Beispiel Rechnungen}{7}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Schwächen des Algorithmus}{7}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Anwendungsbereiche des Gaußschen-Eliminationsverfahrens in der Informatik}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Kryptografie}{8}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Computergrafik}{8}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Datenanalyse}{9}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Abwägungen}{10}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Vorteile im Vergleich zu anderen Methoden}{10}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Nachteile im Vergleich zu anderen Methoden}{10}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Fazit}{11}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Anhang}{12}{chapter.7}%
+\contentsline {chapter}{\numberline {3}Implementierung des Algorithmus}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Erläuterung des Quellcodes}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Beispiel Rechnungen}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Schwächen des Algorithmus}{6}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Abwägungen}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vorteile des Algorithmus}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Nachteile des Algorithmus}{7}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Anwendungsbereiche des Gaußschen-Eliminationsverfahrens in der Informatik}{8}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Kryptografie}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Computergrafik}{8}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Datenanalyse}{9}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Fazit}{10}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Anhang}{11}{chapter.7}%
