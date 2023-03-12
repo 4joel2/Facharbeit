@@ -7,11 +7,25 @@ import java.io.IOException;
 import java.util.List;
 
 public class Gauss {
-    static Path datei = Paths.get("./input1.txt"); // Einlesen der Datei
+    static String datei; // der Parameter der Datei
+//    static Path datei = Paths.get("./input1.txt"); // Einlesen der Datei
     static double[][] koeff = new double[3][4]; // Initialierung der erweiterten Koeffizienten Matrix
     static double[][] solMatrix = new double[3][4]; // Initialierung der Loesungsmatrix
+    static String[] zeilenElemente;
+    static int countSpalten;
+    static int countZeilen;
 
     public static void main(String[] args) throws IOException { // Main Methode welche alle Methoden ausfuehrt
+        /*
+         * Hier wird der Dateiname als Parameter eingelesen
+         */
+        if (args.length < 1) {
+            System.out.println("Bitte Dateiname als Parameter übergeben!");
+            return;
+        } else {
+            datei = args[0];
+        }
+
         einlesen();
         ausgabe(koeff, "Eingangsmatrix");
         gaussAlgo1();
@@ -19,23 +33,33 @@ public class Gauss {
     }
 
     private static void einlesen() throws IOException { // Einlesen der Koeffizienten aus Datei
-        List<String> f = Files.readAllLines(datei, StandardCharsets.UTF_8);
+
+
+        List<String> f = Files.readAllLines(Paths.get(datei));
         int zeilenIndex = 0;
         for (int i = 0; i < f.size(); i++) {
             String zeile = f.get(i);
-            if (zeile.isEmpty() || zeile.charAt(0) == '#') { // Kommentare und Whitespaces der input Datei werden ignoriert
+             // Kommentare und Whitespaces der input Datei werden ignoriert
+            if (zeile.isEmpty() || zeile.charAt(0) == '#') {
                 continue;
             }
 
-            String[] zeilenElemente = zeile.replace(',', '.').split("\\s+"); // Kommata werden zu Punkten
+            zeilenElemente = zeile.replace(',', '.').split("\\s+"); // Kommata werden zu Punkten
             for (int spaltenIndex = 0; spaltenIndex < zeilenElemente.length; spaltenIndex++) {
                 String element = zeilenElemente[spaltenIndex];
                 double wert = Double.parseDouble(element);
-                koeff[zeilenIndex][spaltenIndex] = wert; // Der Koeffizientenmatrix werden die double Werte zugewiesen, welche in wert gespeichert wurden
+                // Der Koeffizientenmatrix werden die double Werte zugewiesen, welche in wert gespeichert wurden
+                koeff[zeilenIndex][spaltenIndex] = wert;
+
             }
 
             zeilenIndex++;
          }
+        // Speichert Zeilen und Spalten Anzahl
+        countSpalten = zeilenElemente.length;
+        countZeilen = koeff.length;
+        System.out.println(countSpalten);
+        System.out.println(countZeilen);
     }
     private static void ausgabe(double[][] mx, String matrixName){ // Ausgabe der Matrizen
 
@@ -59,13 +83,18 @@ public class Gauss {
                 maxZeile = i;
             }
         }
-        if (maxZeile != zeile) { // Wenn das Element mit dem groessten absoluten Wert in einer anderen Zeile als der aktuellen Zeile gefunden wurde, werden die beiden Zeilen vertauscht. Dies ist die Pivotisierung.
+        /*
+         * Wenn das Element mit dem groessten absoluten Wert in einer anderen Zeile als in der aktuellen Zeile gefunden wurde,
+         *werden die beiden Zeilen vertauscht. Dies ist die Pivotisierung.
+         */
+        if (maxZeile != zeile) {
             double[] temp = solMatrix[zeile];
             solMatrix[zeile] = solMatrix[maxZeile];
             solMatrix[maxZeile] = temp;
         }
 
-        for (int i = zeile + 1; i < solMatrix.length; i++) { // Die Koeffizienten werden durch x = -b/a 0
+        // Die Koeffizienten werden durch x = -b/a 0
+        for (int i = zeile + 1; i < solMatrix.length; i++) {
             double factor = -solMatrix[i][zeile] / solMatrix[zeile][zeile];
             multiplyAndAdd(zeile, i, factor);
         }
@@ -78,7 +107,10 @@ public class Gauss {
                 solMatrix[zeilen][spalte] /= diagonale;
 
             }
-            double result = solMatrix[zeilen][solMatrix[zeilen].length - 1]; // Durch ruecksubstitution werden die gefundenen Werte RUECKWAERTS in die uebere Zeile eingesetzt und so x und y errechnet
+            double result = solMatrix[zeilen][solMatrix[zeilen].length - 1]; /*
+                                                                              *  Durch ruecksubstitution werden die gefundenen Werte RUECKWAERTS in die uebere Zeile eingesetzt
+                                                                              *  und so x und y errechnet
+                                                                              */
             for(int rueckZeilen = zeilen - 1; rueckZeilen >= 0; rueckZeilen--){
                 solMatrix[rueckZeilen][solMatrix[zeilen].length - 1] -= result * solMatrix[rueckZeilen][zeilen];
                 solMatrix[rueckZeilen][zeilen] = 0.0;

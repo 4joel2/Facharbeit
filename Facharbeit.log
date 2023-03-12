@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  11 MAR 2023 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  12 MAR 2023 17:12
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**Facharbeit.tex
-(./Facharbeit.tex
+**/tmp/nvim.joel/tboBEx/2
+(/tmp/nvim.joel/tboBEx/2
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
@@ -798,15 +798,15 @@ Kapitel 2.
 <./Zeilenstufenform.jpeg, id=124, 951.555pt x 239.89626pt>
 File: ./Zeilenstufenform.jpeg Graphic file (type jpg)
 <use ./Zeilenstufenform.jpeg>
-Package pdftex.def Info: ./Zeilenstufenform.jpeg  used on input line 117.
+Package pdftex.def Info: ./Zeilenstufenform.jpeg  used on input line 116.
 (pdftex.def)             Requested size: 351.31378pt x 88.56987pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--120
+Underfull \hbox (badness 10000) in paragraph at lines 114--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--120
+Underfull \hbox (badness 10000) in paragraph at lines 114--119
 
  []
 
@@ -815,7 +815,7 @@ Kapitel 3.
 <./gaussuml.png, id=135, 230.8625pt x 210.7875pt>
 File: ./gaussuml.png Graphic file (type png)
 <use ./gaussuml.png>
-Package pdftex.def Info: ./gaussuml.png  used on input line 131.
+Package pdftex.def Info: ./gaussuml.png  used on input line 130.
 (pdftex.def)             Requested size: 150.56305pt x 137.47018pt.
  [5 <./gaussuml.png>] [6]
 Kapitel 4.
@@ -835,43 +835,84 @@ Kapitel 7.
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 181.
+nput line 179.
 
-(./Quellcode/Gauss.java [11
+(./Quellcode/Gauss.java
 
-] [12]) [13] [14
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ..."Bitte Dateiname als Parameter übergeben!
+                                                  ");
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+! LaTeX Error: Invalid UTF-8 byte "BC.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ..."Bitte Dateiname als Parameter übergeben!
+                                                  ");
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[11
+
+] [12] [13]) [14] [15
 
 ] (./Facharbeit.aux)
-Package rerunfilecheck Info: File `Facharbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 5427FF2B816A09156B17254BE9952FE1;2776.
+
+Package rerunfilecheck Warning: File `Facharbeit.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Facharbeit.out':
+(rerunfilecheck)             Before: 5427FF2B816A09156B17254BE9952FE1;2776
+(rerunfilecheck)             After:  8D0D3B716E5F5AA03B5355ED10EA76BB;2587.
 Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
 \openout1 = `Facharbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21523 strings out of 476091
- 365487 string characters out of 5791548
- 2318330 words of memory out of 5000000
- 41504 multiletter control sequences out of 15000+600000
+ 21560 strings out of 476091
+ 366119 string characters out of 5791548
+ 2375330 words of memory out of 5000000
+ 41506 multiletter control sequences out of 15000+600000
  522033 words of font info for 70 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 75i,9n,76p,683b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Facharbeit.pdf (15 pages, 194710 bytes).
+ 75i,9n,76p,692b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Facharbeit.pdf (16 pages, 197099 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
- 149 named destinations out of 1000 (max. 500000)
+ 419 PDF objects out of 1000 (max. 8388607)
+ 370 compressed objects within 4 object streams
+ 182 named destinations out of 1000 (max. 500000)
  147 words of extra memory for PDF output out of 10000 (max. 10000000)
 
