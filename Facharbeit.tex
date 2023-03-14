@@ -1,16 +1,10 @@
 \documentclass[a4paper, 12pt]{report}
 \usepackage[ngerman]{babel}
 \usepackage{amssymb}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=magenta,
-    urlcolor=black,
-    pdftitle={Facharbeit},
-    }
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{bbm}
+\usepackage{setspace}
 \usepackage{graphicx}
 \usepackage[style=alphabetic ,backend=biber]{biblatex}
 \usepackage{csquotes}
@@ -23,7 +17,7 @@
  top=25mm,
  bottom=40mm
  }
-
+ \setstretch{1.5}
 \addbibresource{../Facharbeit/literatur.bib}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -74,12 +68,12 @@ zu analysieren, und Anwendungsmöglichkeiten aufzuzeigen.
 \chapter{Theoretische Grundlagen}
 Der Gauß-Algorithmus ist ein Algorithmus, welcher beim Lösen von linearen Gleichungssystemen zum Einsatz kommt. Im folgenden Kapitel wird die mathematische
 Theorie erläutert und die Definitionen genannt, welche die Grundlage für die spätere Implementierung sind.
-Die folgenden Definitionen sind sinngemäß aus \cite{1} entnommen.
+
 \section{Lineare Gleichungssysteme}
 Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens dem ersten Grad vorkommt.
 Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m x n $ Matrix ist, $x$ ein n-dimensionaler Vektor von Unbekannten
 und b ein $m$-dimensionaler Vektor von Konstanten ist.
-Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren. :
+Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren.:\cite{1}
 \begin{align}
 \label{eq:linGle}
     a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &=& b_1 \nonumber \\
@@ -90,19 +84,23 @@ Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren. :
 Das Ziel eines solchen linearen Gleichungssystems ist es, eine Lösung für $x$ zu finden, die alle Gleichungen erfüllt.
 Hierbei gibt es drei Arten von Lösungen:
 \begin{enumerate}
-    \item Das Gleichungssystem hat genau \textit{eine} Lösung; es gibt genau eine Lösung, welche alle Gleichungen im System erfüllt. Die Lösungsmenge ist z. B. : $\mathbb{L} = \{ (x,y,z)| (1,2,3)\} $.
-    \item Das Gleichungssystem hat \textit{keine} Lösung, wenn es keine Lösung gibt, die alle Gleichungen erfüllt. Die Lösungsmenge ist eine leere Menge: $\mathbb{L} = \{ \}$.
-    \item Das Gleichungssystem hat \textit{unendlich viele} Lösungen, wenn es mehrere Lösungen gibt, die alle Gleichungen im System erfüllen.
-        Hierbei sind die verschiedenen Variablen voneinander abhängig. Die Lösungsmenge sieht beispielsweise wie folgt aus: \newline $ \mathbb{L} = \{(x, y, z)| (x = ay + z, y\in \mathbb{R}, z \in \mathbb{R}) \} $.
+    \item Das Gleichungssystem hat genau \textit{eine} Lösung; es gibt genau eine Lösung, welche alle Gleichungen im System
+        erfüllt. Die Lösungsmenge ist z. B. : $\mathbb{L} = \{ (x,y,z)| (1,2,3)\} $.
+    \item Das Gleichungssystem hat \textit{keine} Lösung, wenn es keine Lösung gibt,
+        die alle Gleichungen erfüllt. Die Lösungsmenge ist eine leere Menge: $ \mathbb{L}= \emptyset$.
+    \item Das Gleichungssystem hat \textit{unendlich viele} Lösungen, wenn es mehrere Lösungen gibt
+        die alle Gleichungen im System erfüllen.
+        Hierbei sind die verschiedenen Variablen voneinander abhängig.
+        Die Lösungsmenge sieht beispielsweise wie folgt aus: \newline $ \mathbb{L} = \{(x, y, z)| (x = ay + z, y\in \mathbb{R}, z \in \mathbb{R}) \} $.
 \end{enumerate}
 
 
 \section{Gaußsches Eliminationsverfahren} \label{2.2}
-Für die folgenden Definitionen und Erläuterungen wurde sinngemäß auf \cite{2} zurückgegriffen. \newline
+\newline
 Gegeben sei das Allgemeine Lineare Gleichungssystem \ref{eq:linGle}. Gesucht ist nun die Menge der $ (x_1, \hdots ,x_n ) \in \mathbb{R}^n $, die alle Gleichungen erfüllen.
 Dies erreicht man, indem man folgendermaßen vorgeht.:
 \begin{enumerate}
-    \item Die erweiterte Koeffizientenmatrix $ (A, b) $ aufschreiben.:
+    \item Die erweiterte Koeffizientenmatrix $ (A, b) $ aufschreiben. \cite{2}:
         \begin{equation}
             (A, b):=
             \begin{pmatrix}
@@ -114,14 +112,14 @@ Dies erreicht man, indem man folgendermaßen vorgeht.:
     \item $A$ durch elementare Zeilentransformationen, also Vertauschen von Zeilen, Multiplikation einer Zeile mit einer Zahl $\neq 0 $ oder Addition des Vielfachen von einer Zeile zu einer anderen Zeile auf Zeilenstufenform bringen.
         Eine $ m x n $-Matrix A heißt in \textit{Zeilenstufenform}, wenn sie von der folgenden Form ist: \newline \newline
         \includegraphics[width=350px]{"./Zeilenstufenform.jpeg"} \newline \newline
-        Dabei steht der Stern für eine beliebige Zahl, und die freien Plätze sind alle mit Nullen besetzt. Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivotelement der Zeile genannt.
-        Das Pivotelement der $(i + 1)$-ten Zeile steht immer rechts des Pivotelementes der i-ten Zeile, und alle Einträge oberhalb eines Pivotelementes sind gleich Null.
-    \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermiteln. Man teilt die letzte Spalte durch den Wert des Koeffizienten, so dass die Variable alleine steht.
+        Dabei steht der Stern für eine beliebige Zahl, und die freien Plätze sind alle mit Nullen besetzt. Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt.
+        Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der i-ten Zeile, und alle Einträge oberhalb eines Pivot-Elements sind gleich Null. \cite{5}
+    \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermitteln. Man teilt die letzte Spalte durch den Wert des Koeffizienten, so dass die Variable alleine steht.
           Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
 \end{enumerate}
 
 {\let\clearpage\relax \chapter{Implementierung des Algorithmus}}
-Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache "Java" verwendet. Der gesamte Quellcode findet sich im Anhang.
+Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache "Java" verwendet.
 
 \section{Erläuterung des Quellcodes}
 Der grundlegende Aufbau des Programms lässt sich an folgendem Implementationsdiagramm erkennen.:
