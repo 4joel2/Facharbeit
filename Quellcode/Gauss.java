@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.List;
 
+
 public class Gauss {
     static String datei; // der Parameter der Datei
     static double[][] koeff; // Initialierung der erweiterten Koeffizienten Matrix
@@ -15,6 +16,8 @@ public class Gauss {
     static String[] zeilenElemente;
     static int countSpalten = 0;
     static int countZeilen;
+    static final boolean SONDERFALL = true;
+    static final boolean NORMALFALL = false;
 
     /**
      * main Methode in welcher alle Methoden ausgefuehrt werden
@@ -69,6 +72,12 @@ public class Gauss {
 
             zeilenIndex++;
          }
+        /*double[][] hilfMat = koeff;
+        if(hilfMat.length != countSpalten){
+            System.out.println("Falsche Matrix!");
+            return;
+        }*/
+
         // Speichert Zeilenanzahl
         countZeilen = koeff.length;
         System.out.println(countSpalten);
@@ -85,7 +94,7 @@ public class Gauss {
         System.out.println("Die " + matrixName + ":");
         for (int j = 0; j < mx.length; j++) {
             for (int k = 0; k < mx[j].length; k++) {
-                System.out.print(mx[j][k] + " ");
+                System.out.print(Math.round(mx[j][k] * 10000d) / 10000d + " "); // TODO: GILT NUR FUER NETTE ZAHLEN
             }
             System.out.println();
         }
@@ -140,6 +149,14 @@ public class Gauss {
         }
 
         ausgabe(solMatrix, "Triangularisierte Matrix");
+
+        /*
+         * Untersuchung der Triangularisierten Matrix: 1.: wvl 0 Zeilen gibt es am Ende
+         */
+        if(checkWievielNullZeilen() == SONDERFALL){
+            System.exit(-1);
+        }
+
         /*
          *  Durch ruecksubstitution werden die gefundenen Werte RUECKWAERTS in die uebere Zeile eingesetzt
          *  und so x und y errechnet
@@ -158,14 +175,7 @@ public class Gauss {
         }
     }
 
-    /**
-     * copyline setzt die Endlgeichung = erw. Koeffizientenmatrix
-     */
-    private static void copyLine(int line){
-        for(int i = 0; i < koeff[line].length; i++) {
-            solMatrix[line][i] = koeff[line][i];
-        }
-    }
+
 
     /**
      * multiplyAndAdd bringt die Koeffizienten auf 0
@@ -179,5 +189,33 @@ public class Gauss {
         }
 
     }
+
+    private static boolean checkWievielNullZeilen() {
+        int nullCounter = 0;
+        for(int i = countZeilen - 1; i >= 0; i--){
+            if(checkObNull(i) == true){
+                nullCounter++;
+            } else {
+                if(nullCounter != 0){
+                    System.out.println("Sonderfall gefunden: Es gibt " + nullCounter + " Nullzeilen " );
+                    return SONDERFALL;
+                }else{
+                    return NORMALFALL;
+                }
+            }
+        }
+        System.out.println("Sonderfall gefunden, Matrix besteht aus Nullen!");
+        return SONDERFALL;
+    }
+
+    private static boolean checkObNull(int zeile){
+        for(int i= 0; i < countSpalten; i++){
+            if(solMatrix[zeile][i] != 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
 
