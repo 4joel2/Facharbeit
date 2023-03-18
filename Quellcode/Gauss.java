@@ -190,6 +190,14 @@ public class Gauss {
 
     }
 
+    /**
+     * Die Methode prüft wieviele Nullzeilen die Matrix hat.
+     * @return SONDERFALL wird zurückgegeben wenn die Matrix ein Sonderfall ist.
+     * @return NORMALFALL wird sonst zurückgegeben
+     *
+     *
+     */
+
     private static boolean checkWievielNullZeilen() {
         int nullCounter = 0;
         for(int i = countZeilen - 1; i >= 0; i--){
@@ -208,6 +216,10 @@ public class Gauss {
         return SONDERFALL;
     }
 
+    /**
+     * @param zeile Die Zeile welchhe geprüft wird
+     * Die Methode prüft für jedes Element ob es den Wert Null hat
+     */
     private static boolean checkObNull(int zeile){
         for(int i= 0; i < countSpalten; i++){
             if(solMatrix[zeile][i] != 0){
