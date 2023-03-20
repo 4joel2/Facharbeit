@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  18 MAR 2023 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  20 MAR 2023 21:42
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**/tmp/nvim.joel/L4xQ3b/1
-(/tmp/nvim.joel/L4xQ3b/1
+**/tmp/nvim.joel/rB93oe/2
+(/tmp/nvim.joel/rB93oe/2
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
@@ -690,40 +690,43 @@ arbeit.toc)
 \openout5 = `Facharbeit.toc'.
 
 
+Kapitel 1.
 [1
 
 ]
-Kapitel 1.
 Kapitel 2.
-[2
+[2] [3]
+Overfull \hbox (18.78339pt too wide) in paragraph at lines 104--109
+[]\OT1/cmr/m/n/12 Das Glei-chungs-sys-tem hat \OT1/cmr/m/it/12 un-end-lich vie-
+le \OT1/cmr/m/n/12 L[]osungen, wenn es meh-re-re L[]osungen
+ []
 
-] [3]
-<./Zeilenstufenform.jpeg, id=24, 951.555pt x 239.89626pt>
+<./Zeilenstufenform.jpeg, id=22, 951.555pt x 239.89626pt>
 File: ./Zeilenstufenform.jpeg Graphic file (type jpg)
 <use ./Zeilenstufenform.jpeg>
-Package pdftex.def Info: ./Zeilenstufenform.jpeg  used on input line 132.
+Package pdftex.def Info: ./Zeilenstufenform.jpeg  used on input line 131.
 (pdftex.def)             Requested size: 351.31378pt x 88.56987pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--137
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--137
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
 
  []
 
 [4 <./Zeilenstufenform.jpeg>]
 Kapitel 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -732,7 +735,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -741,7 +744,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -750,7 +753,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -759,7 +762,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -768,7 +771,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -777,7 +780,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -786,7 +789,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -795,7 +798,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -804,7 +807,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -813,7 +816,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -822,7 +825,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -831,7 +834,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -840,7 +843,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -849,7 +852,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -858,7 +861,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -867,7 +870,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -876,7 +879,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -885,7 +888,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -894,7 +897,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -903,7 +906,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -912,7 +915,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -921,7 +924,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -930,7 +933,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -939,7 +942,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -948,7 +951,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -957,7 +960,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -966,7 +969,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -975,7 +978,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -984,7 +987,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -993,7 +996,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1002,7 +1005,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1011,7 +1014,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1020,7 +1023,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1029,7 +1032,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1038,7 +1041,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1047,7 +1050,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1056,7 +1059,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1065,7 +1068,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1074,7 +1077,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1083,7 +1086,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1092,7 +1095,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1101,7 +1104,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1110,7 +1113,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1119,7 +1122,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1128,7 +1131,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1137,7 +1140,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1146,7 +1149,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.165 \end{tabularx}
+l.164 \end{tabularx}
                     
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1357,7 +1360,7 @@ Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  15725 strings out of 476091
- 275929 string characters out of 5791548
+ 275925 string characters out of 5791548
  2488330 words of memory out of 5000000
  35917 multiletter control sequences out of 15000+600000
  522846 words of font info for 74 fonts, out of 8000000 for 9000
@@ -1377,7 +1380,7 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Facharbeit.pdf (18 pages, 217312 bytes).
+Output written on Facharbeit.pdf (18 pages, 217835 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream

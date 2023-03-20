@@ -60,27 +60,26 @@
 \LARGE \date{März 2023}
 \begin{document}
 \maketitle
-\begin{sloppypar}
 \tableofcontents
 
-\chapter{Einleitung}
+{\let\clearpage\relax \chapter{Einleitung}}
 \begin{quote}
     "The simplest model in applied mathematics is a system of linear equations. It is also by far the most important."
-    \newline GILBERT STRANG
 \end{quote}
-Der Gauß-Algorithmus ist eins der wichtigsten Lösungsverfahren zum Lösen linearer Gleichungssysteme.
-Er spielt eine tragende Rolle in vielen Bereichen der Mathematik und ist dennoch  recht unkompliziert.
-    Aufgrund der Wichtigkeit, habe ich dazu entschieden, den Algorithmus in dieser
-Facharbeit zu implementieren,
-zu analysieren, und Anwendungsmöglichkeiten aufzuzeigen.
+
+Die lineare Algebra stellt eines der wichigsten Felder der Mathematik dar. Wie aus dem Zitat des Mathematikers Gilbert Strang hervorgeht, sind die linearen Gleichungssysteme trotz ihrer Simplizität eines der wichtigsten Konzepte
+in der angewandten Mathematik.
+Eines der faszinierendsten Lösungsverfahren dieser Gleichungssysteme ist der Gaußsche Algorithmus,
+der das Lösen auf einfachste Weise möglich macht. Seit der Entdeckung im frühen 19. Jahrhundert, durch den
+Mathematiker Carl Friedrich Gauß, stellt es eines der elementarsten Lösungsverfahren linearer Gleichungssysteme dar.
+Auch in der Informatik spielt der Algorithmus eine große Rolle. Aus diesen Gründen wird im Folgenden eine Implementationsmöglichkeit
+vorgestellt. Zuerst wird der mathematische Hintergrund erläutert, anschließend der Quellcode des Algorithmus vorgestellt und  Vor- bzw. Nachteile abgewägt.
+Weiter werden spezifische Anwendungsmöglichkeiten in der Informatik aufgezeigt und zuletzt ein Fazit gezogen.
 
 {\let\clearpage\relax \chapter{Theoretische Grundlagen}}
-
-Der Gauß-Algorithmus ist ein Algorithmus, welcher beim Lösen von linearen Gleichungssystemen zum Einsatz kommt.
-Im folgenden Kapitel wird die mathematische
-Theorie erläutert und die Definitionen genannt, welche die Grundlage für die spätere Implementierung sind.
-
-{\let\clearpage\relax \section{Lineare Gleichungssysteme}}
+Um die Implementation des Algorithmus nachvollziehen zu können, werden zunächste die mathematischen Grundlagen und Definitonen
+von linearen Gleichungssystemen und dem Algorithmus an sich erläutert.
+\section{Lineare Gleichungssysteme}
 Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens
 dem ersten Grad vorkommt.
 Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m x n $ Matrix ist,
@@ -266,9 +265,10 @@ um die Transformationsoperationen umzukehren. Die inverse Matrix wird auch dazu 
 um sie in eine konsistente Richtung zu bringen, was wichtig ist für Beleuchtungs- und Schattierungsberechnungen.
 
 {\let\clearpage\relax \chapter{Fazit}}
+
+
 \chapter*{Anhang}
 \footnotesize
 \lstinputlisting[language=Java, caption=Quellcode des Gauß-Algorithmus]{./Quellcode/Gauss.java}
 \printbibliography
-\end{sloppypar}
 \end{document}
