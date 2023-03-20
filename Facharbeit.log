@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  20 MAR 2023 21:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  20 MAR 2023 21:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**/tmp/nvim.joel/rB93oe/2
-(/tmp/nvim.joel/rB93oe/2
+**/tmp/nvim.joel/tg6dMT/2
+(/tmp/nvim.joel/tg6dMT/2
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
@@ -1166,9 +1166,7 @@ Kapitel 6.
 [11] (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(./Quellcode/Gauss.java [12
-
-] [13] [14]
+(./Quellcode/Gauss.java [12] [13] [14]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (Ã\expandafter).
 
@@ -1361,7 +1359,7 @@ Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
 Here is how much of TeX's memory you used:
  15725 strings out of 476091
  275925 string characters out of 5791548
- 2488330 words of memory out of 5000000
+ 2471330 words of memory out of 5000000
  35917 multiletter control sequences out of 15000+600000
  522846 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -1380,7 +1378,7 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Facharbeit.pdf (18 pages, 217835 bytes).
+Output written on Facharbeit.pdf (18 pages, 218957 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
