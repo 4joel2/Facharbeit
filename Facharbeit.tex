@@ -130,16 +130,27 @@ Um diese Menge zu finden, geht man folgendermaßen vor:
     \item $(A, b)$ durch elementare Zeilentransformationen, also Vertauschen von Zeilen,
         Multiplikation einer Zeile mit einer Zahl $\neq 0 $ oder Addition des Vielfachen von einer Zeile zu einer
         anderen Zeile auf Zeilenstufenform bringen.
-        Eine $ m * n $-Matrix $(A,b)$ heißt in \textit{Zeilenstufenform},
-        wenn sie von der folgenden Form ist: \newline \newline
-        \includegraphics[width=350px]{"./Zeilenstufenform.jpeg"} \newline \newline
-        Dabei steht der Stern für eine beliebige Zahl, und die freien Plätze sind alle mit Nullen besetzt.
-        Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt.
+        \begin{center}
+            \begin{equation}
+                \label{Zeilenstufenform}
+                \left(\begin{array}{cccccc}
+                        1 & a_{12} & a_{13} & \cdots & a_{1,n-1} & a_{1n} \\
+                        0 & 1 & a_{23} & \cdots & a_{2,n-1} & a_{2n} \\
+                        0 & 0 & 1 & \cdots & a_{3,n-1} & a_{3n} \\
+                        \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+                        0 & 0 & 0 & \cdots & 1 & a_{n-1,n} \\
+                \end{array}\right)
+            \end{equation}
+        \end{center}
+
+        Eine $ m * n $-Matrix $(A,b)$, wie in \ref{Zeilenstufenform} wird  \textit{Zeilenstufenform} gennant.
+        Das \textit{a} steht für eine beliebige reelle Zahl, alle anderen Plätze ohne ein \textit{a} sind von Nullen besetzt.
+        Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt. \\
         Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der I-ten Zeile, und alle Einträge
-        oberhalb eines Pivot-Elements sind gleich null. \cite{5}.
+        oberhalb eines Pivot-Elements sind gleich null. Vgl. \cite{5}.
     \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermitteln.
-          Man teilt die letzte Spalte durch den Wert des Koeffizienten, sodass die Variable alleine steht.
-          Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
+        Man teilt die letzte Spalte durch den Wert des Koeffizienten, sodass die Variable alleine steht.
+        Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
 \end{enumerate}
 
 {\let\clearpage\relax \chapter{Erläuterung des Quellcodes}}
@@ -148,8 +159,9 @@ Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurd
 Das Implementationsdiagramm zeigt den Aufbau: \newline
 \begin{center}
 {\ttfamily
-\begin{tikzpicture}
-    \umlclass{Gauß}{
+\begin{tikzpicture}[scale=0.6]
+    \tiny
+  \umlclass{Gauß}{
     - datei: String \\
     - countSpalten: int \\
     - NORMALFALL: boolean \\
@@ -163,12 +175,14 @@ Das Implementationsdiagramm zeigt den Aufbau: \newline
     + einlesen(): void \\
     + ausgabe(): void \\
     + gaussAlgo(): void \\
-    + multiplyAndAdd(lineOne: int, lineTwo: int, factor: double):void \\
+    + multiplyAndAdd(lineOne: int, lineTwo: int, \\ factor: double):void \\
     - checkWievielNullZeilen(): boolean \\
     - checkObNull(): boolean
   }
+  \umlinherit{Gauß}{Object}
 \end{tikzpicture}
 }
+
 \end{center}
 Die Namen der Methoden wurden so gewählt, dass die Grundfunktion dieser klar sind.
 In der Main Methode des Programms wird ein Parameter übernommen,
