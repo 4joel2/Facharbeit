@@ -7,7 +7,7 @@
 \contentsline {chapter}{\numberline {4}Abwägungen}{9}{}%
 \contentsline {section}{\numberline {4.1}Vorteile des Algorithmus}{9}{}%
 \contentsline {section}{\numberline {4.2}Nachteile des Algorithmus}{9}{}%
-\contentsline {chapter}{\numberline {5}Anwendungsbereiche des Gaußschen-Eliminationsverfahrens in der Informatik}{10}{}%
+\contentsline {chapter}{\numberline {5}Anwendungsbereiche des Gauß'schen \\ Eliminationsverfahrens in der Informatik}{10}{}%
 \contentsline {section}{\numberline {5.1}Kryptografie}{10}{}%
-\contentsline {section}{\numberline {5.2}Computergrafik}{11}{}%
+\contentsline {section}{\numberline {5.2}Computergrafik}{10}{}%
 \contentsline {chapter}{\numberline {6}Fazit}{11}{}%

@@ -4,7 +4,11 @@
 \usepackage{tabularx}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{tikz-uml}
 \usepackage{bbm}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\normalfont\LARGE\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\LARGE}
 \usepackage{setspace}
 \usepackage{fancyvrb}
 \usepackage{graphicx}
@@ -24,8 +28,7 @@
 \addbibresource{../Facharbeit/literatur.bib}
 \usepackage{listings}
 \usepackage{xcolor}
-
-
+\tikzumlset{fill class=white}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -67,22 +70,23 @@
     "The simplest model in applied mathematics is a system of linear equations. It is also by far the most important."
 \end{quote}
 
-Die lineare Algebra stellt eines der wichigsten Felder der Mathematik dar. Wie aus dem Zitat des Mathematikers Gilbert Strang hervorgeht, sind die linearen Gleichungssysteme trotz ihrer Simplizität eines der wichtigsten Konzepte
-in der angewandten Mathematik.
+Die lineare Algebra stellt eines der wichigsten Felder der Mathematik dar. Wie aus dem Zitat des Mathematikers Gilbert Strang hervorgeht,
+sind die linearen Gleichungssysteme trotz ihrer Simplizität eines der wichtigsten Konzepte in der angewandten Mathematik.
 Eines der faszinierendsten Lösungsverfahren dieser Gleichungssysteme ist der Gaußsche Algorithmus,
-der das Lösen auf einfachste Weise möglich macht. Seit der Entdeckung im frühen 19. Jahrhundert, durch den
-Mathematiker Carl Friedrich Gauß, stellt es eines der elementarsten Lösungsverfahren linearer Gleichungssysteme dar.
-Auch in der Informatik spielt der Algorithmus eine große Rolle. Aus diesen Gründen wird im Folgenden eine Implementationsmöglichkeit
-vorgestellt. Zuerst wird der mathematische Hintergrund erläutert, anschließend der Quellcode des Algorithmus vorgestellt und  Vor- bzw. Nachteile abgewägt.
+weil er das Lösen auf einfachste Weise möglich macht. Seit der Entdeckung im frühen 19. Jahrhundert, durch den
+Mathematiker Carl Friedrich Gauß, stellt er eines der elementarsten Lösungsverfahren linearer Gleichungssysteme dar.
+Auch in der Informatik spielt der Algorithmus eine große Rolle, beispielsweise in der Computergrafik. Aus diesen Gründen wird im Folgenden eine Implementationsmöglichkeit
+vorgestellt. Zuerst wird der mathematische Hintergrund erläutert, anschließend der Quellcode des Algorithmus vorgestellt und
+Vor- bzw. Nachteile abgewägt.
 Weiter werden spezifische Anwendungsmöglichkeiten in der Informatik aufgezeigt und zuletzt ein Fazit gezogen.
 
-{\let\clearpage\relax \chapter{Theoretische Grundlagen}}
+\chapter{Theoretische Grundlagen}
 Um die Implementation des Algorithmus nachvollziehen zu können, werden zunächste die mathematischen Grundlagen und Definitonen
 von linearen Gleichungssystemen und dem Algorithmus an sich erläutert.
 \section{Lineare Gleichungssysteme}
 Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens
 dem ersten Grad vorkommt.
-Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m x n $ Matrix ist,
+Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m*n $ Matrix ist,
 $x$ ein n-dimensionaler Vektor von Unbekannten
 und b ein $m$-dimensionaler Vektor von Konstanten ist.
 Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren.: \cite{1}
@@ -103,7 +107,7 @@ Hierbei gibt es drei Arten von Lösungen:
         die alle Gleichungen erfüllt. Die Lösungsmenge ist eine leere Menge: $ \mathbb{L}= \emptyset$.
     \item Das Gleichungssystem hat \textit{unendlich viele} Lösungen, wenn es mehrere Lösungen gibt
         die alle Gleichungen im System erfüllen.
-        Hierbei sind die verschiedenen Variablen voneinander abhängig.
+        Hierbei sind die verschiedenen Variablen möglicherweise voneinander abhängig.
         Die Lösungsmenge sieht beispielsweise wie folgt aus:
         \newline $ \mathbb{L} = \{(x, y, z)| (x = ay + z, y\in \mathbb{R}, z \in \mathbb{R}) \} $.
 \end{enumerate}
@@ -112,9 +116,9 @@ Hierbei gibt es drei Arten von Lösungen:
 \section{Gaußsches Eliminationsverfahren} \label{2.2}
 Gegeben sei das Allgemeine Lineare Gleichungssystem \ref{eq:linGle}.
 Gesucht ist nun die Menge der $ (x_1, \hdots ,x_n ) \in \mathbb{R}^n $, die alle Gleichungen erfüllen.
-Dies erreicht man, indem man folgendermaßen vorgeht.:
+Um diese Menge zu finden, geht man folgendermaßen vor:
 \begin{enumerate}
-    \item Die erweiterte Koeffizientenmatrix $ (A, b) $ aufschreiben. \cite{2}:
+    \item Das Gleichungssystem in Die erweiterte Koeffizientenmatrix $ (A, b) $ bringen. \cite{2}:
         \begin{equation}
             (A, b):=
             \begin{pmatrix}
@@ -123,98 +127,102 @@ Dies erreicht man, indem man folgendermaßen vorgeht.:
                 a_{m1} &  \hdots &  a_{mn} &  b_m \\
             \end{pmatrix}
         \end{equation}
-    \item $A$ durch elementare Zeilentransformationen, also Vertauschen von Zeilen,
+    \item $(A, b)$ durch elementare Zeilentransformationen, also Vertauschen von Zeilen,
         Multiplikation einer Zeile mit einer Zahl $\neq 0 $ oder Addition des Vielfachen von einer Zeile zu einer
         anderen Zeile auf Zeilenstufenform bringen.
-        Eine $ m x n $-Matrix A heißt in \textit{Zeilenstufenform},
+        Eine $ m * n $-Matrix $(A,b)$ heißt in \textit{Zeilenstufenform},
         wenn sie von der folgenden Form ist: \newline \newline
         \includegraphics[width=350px]{"./Zeilenstufenform.jpeg"} \newline \newline
         Dabei steht der Stern für eine beliebige Zahl, und die freien Plätze sind alle mit Nullen besetzt.
         Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt.
-        Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der i-ten Zeile, und alle Einträge
-        oberhalb eines Pivot-Elements sind gleich Null. \cite{5}
+        Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der I-ten Zeile, und alle Einträge
+        oberhalb eines Pivot-Elements sind gleich null. \cite{5}.
     \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermitteln.
-        Man teilt die letzte Spalte durch den Wert des Koeffizienten, so dass die Variable alleine steht.
+          Man teilt die letzte Spalte durch den Wert des Koeffizienten, sodass die Variable alleine steht.
           Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
 \end{enumerate}
 
 {\let\clearpage\relax \chapter{Erläuterung des Quellcodes}}
 Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache "Java" verwendet.
 
-Der grundlegende Aufbau des Programms lässt sich an folgendem Implementationsdiagramm erkennen.: \newline
+Das Implementationsdiagramm zeigt den Aufbau: \newline
 \begin{center}
-\footnotesize
-\begin{tabularx}{0.8\textwidth} {
-     | >{\raggedright\arraybackslash}X |}
-    \hline
-    Gauss &
-    \hline
-    - datei:String  & - koeff: double[][] & - solMatrix: double[][] & - zeilenElemente: String[] &
-    - countSpalten: int & - countZeilen: int & - SONDERFALL: boolean &
-    - NORMALFALL: boolean &
-    \hline
-    - main(args: String[]): void &
-    - einlesen(): void &
-    - ausgabe(): void &
-    - gaussAlgo(): void &
-    - multiplyAndAdd(lineOne: int, lineTwo: int, factor: double): void &
-    - checkWievielNullZeilen(): boolean &
-    -checkObNull(zeile: int): boolean &
-    \hline
-\end{tabularx}
-\newline
+{\ttfamily
+\begin{tikzpicture}
+    \umlclass{Gauß}{
+    - datei: String \\
+    - countSpalten: int \\
+    - NORMALFALL: boolean \\
+    - koeff: double[][] \\
+    - solMatrix: double[][] \\
+    - zeilenElemente: String[] \\
+    - countZeilen: int \\
+    - SONDERFALL: boolean
+  }{
+    + main(args: String[]): void \\
+    + einlesen(): void \\
+    + ausgabe(): void \\
+    + gaussAlgo(): void \\
+    + multiplyAndAdd(lineOne: int, lineTwo: int, factor: double):void \\
+    - checkWievielNullZeilen(): boolean \\
+    - checkObNull(): boolean
+  }
+\end{tikzpicture}
+}
 \end{center}
 Die Namen der Methoden wurden so gewählt, dass die Grundfunktion dieser klar sind.
 In der Main Methode des Programms wird ein Parameter übernommen,
 welcher die Datei mit der Koeffizientenmatrix annimmt. Außerdem werden
 in dieser die Methoden \texttt{einlesen(), ausgabe() und gaussAlgo()} ausgeführt.
-Die Methode \texttt{ausgabe()} gibt in der Main Methode
-sowohl die Eingangsmatrix als auch die Lösungsmatrix aus. \newline
+Die Methode \texttt{ausgabe()} gibt in der Main Methode die Eingangsmatrix, die triangularisierte Matrix
+und die Lösungsmatrix aus. \newline
 Die Methode \texttt{einlesen()} liest die Koeffizientenmatrix aus der Datei ein,
 dabei wird eine Liste erstellt, in welcher alle Zeilen der eingelesenen Datei gespeichert werden.
-Dann werden durch eine For-Schleife alle Leerzeichen und Kommentare entfernt. Des Weiteren werden die Kommata zu Punkten gemacht,
+Die Datei kann Kommentare und Leerzeilen enthalten, daher werden durch eine For-Schleife alle Leerzeichen und Kommentare entfernt.
+Des Weiteren werden die Kommata zu Punkten gemacht,
 um das Funktionieren des Algorithmus auch auf anderen Systemen zu gewährleisten.
 Weiterhin wird die Anzahl der Spalten in der Variable \texttt{countSpalten},
 und die Anzahl der Zeilen in \texttt{countZeilen} gespeichert und
 im Zuge dessen auch die \textit{Eingangsmatrix} \texttt{koeff[][]}und die \textit{Lösungsmatrix} \texttt{solMatrix[][]}initialisiert.
-Die Methode \texttt{ausgabe()} nimmt zwei Parameter an, den zweidimensionalen Array \texttt{double mx}
+Die Methode \texttt{ausgabe()} nimmt zwei Parameter an, das zweidimensionale Array \texttt{double mx}
 und den String \texttt{matrixName}. Beide werden durch eine For-Schleife auf der Konsole ausgegeben.
 Die Methode \texttt{multiplyAndAdd()}, welche die Parameter \texttt{lineOne, lineTwo (Integer)}
-und den \texttt{double factor} annimmt, wird verwendet um, die Koeffizienten zu einer Null zu machen.
+und den \texttt{double factor} annimmt, wird verwendet, um die Koeffizienten zu einer Null zu machen.
 Dabei wird durch eine For-Schleife über die Spalten der Matrix iteriert
 und dabei der Koeffizient an der Stelle von \texttt{lineTwo} und \texttt{spalten} auf den Wert Null gebracht.
 Dies geschieht, indem die Matrix an der Stelle \texttt{lineOne} und \texttt{spalten} mit dem Parameter \texttt{factor} multipliziert
-und zu dem zu verändernden Koeffizienten addiert.
+und zu dem zu verändernden Koeffizienten addiert wird.
 Weiter gibt es die Methode \texttt{checkObNull()}, welche den Parameter \texttt{zeile (Integer)} annimmt
-und über die Eingangsmartix iteriert und prüft ob ein Koeffizient den Wert Null hat, wenn es einen solchen Fall gibt
-wird \texttt{true} zurückgegeben, andernfalls \texttt{false}.
-Diese Methode wird später für die Sonderbehandlung von nicht normalen Matrizes verwendet.
-Anknüpfend gibt es noch die Methode \texttt{checkWievielNullZeilen()}. Diese iteriert, ausgehend von der dritten Zeile,
-über die Zeilen und prüft für jede, ob die Koeffizienten in der Zeile gleich null sind. Für jede gefundene Null-Zeile wird, ein Counter
+und über die Eingangsmartix iteriert und prüft, ob ein Koeffizient den Wert Null hat. Zu diesem Fall wird
+\texttt{true} zurückgegeben, andernfalls \texttt{false}.
+Diese Methode wird später für die Sonderbehandlung von Matrizes verwendet, die entweder eine Null-Zeile haben oder komlett Null sind.
+Anknüpfend gibt es noch die Methode \texttt{checkWievielNullZeilen()}. Diese iteriert, ausgehend von der letzten Zeile,
+über alle Zeilen und prüft, ob alle Koeffizienten in der Zeile gleich null sind. Für jede gefundene Null-Zeile wird ein Counter
 \texttt{nullCounter} erhöht. Wenn diese Zählvariable am Ende der Iteration ungleich Null ist, wird die Konstante \texttt{SONDERFALL} zurückgegeben
 und die Anzahl der Null-Zeilen auf der Konsole ausgegeben, andernfalls wird die Konstante \texttt{NORMALFALL} zurückgegeben.
-Wenn die Matrix an jeder Stelle eine Null hat, wird ebenfalls interveniert und die Fehlermeldung auf der Konsole ausgegeben.
-Die Methode arbeitet sehr effektiv, denn durch die Pivotisierung kann, wie bereits erwähnt, von hinten iteriert werden, denn
+Wenn die Matrix an jeder Stelle eine Null hat, wird ebenfalls interveniert und der Sonderfall auf der Konsole ausgegeben.
+Die Methode arbeitet sehr effektiv, denn durch die Pivotisierung kann nach erfolgter Triangularisierung von der letzten Zeile aus iteriert werden, denn
 wenn es Null-Zeilen gibt so sind diese am Ende.
 
-Die Methode \texttt{gaussAlgo()} ist die Methode in der eigentliche Algorithmus passiert.
-Als Erstes wird die Eingangsmartix also \texttt{koeff[][]}, durch eine For-Schleife, in die Lösungsmatrix \texttt{solMatrix[][]} kopiert, damit am Ende
+Die Methode \texttt{gaussAlgo()}, führt den eigentlichen Algorithmus aus.
+Als Erstes wird die Eingangsmartix, also \texttt{koeff[][]}, durch eine For-Schleife, in die Lösungsmatrix \texttt{solMatrix[][]} kopiert, damit am Ende
 beide ausgegeben werden können.
 Anschließend findet die Pivotisierung der Matrix statt. Dies geschieht, indem zuerst,
 eine Variable \texttt{maxZeile (Integer)} erzeugt und mit der Zählvariable \texttt{zeile} initialisiert wird.
 Diese wird verwendet, um die Zeile mit dem größten Koeffizienten zu finden.
-In der darauf folgenden for-Schleife findet die eigentliche Pivotisierung statt.
+In der darauf folgenden For-Schleife findet die eigentliche Pivotisierung statt.
 Sie sucht in der aktuellen Spalte nach dem Element mit dem größten, absoluten Wert
 und speichert diesen, wenn der größere Wert in der Zeile unter der aktuellen Zeile ist in der Variable \texttt{maxZeile}.
-Anschließend folgt eine If-Bedingung: Wenn die zuvor initialisierte maxZeile ungleich dem Wert der Variable \texttt{zeile} ist,
-werden die Zeilen mithilfe einer temporären Variable getauscht, sodass am Ende die
+Anschließend wird geprüft ob die zuvor initialisierte maxZeile ungleich dem Wert der Variable \texttt{zeile} ist.
+Wenn dem so ist, werden die Zeilen mithilfe einer temporären Variable getauscht, sodass am Ende die
 Zahl mit dem größten Koeffizienten oben steht.
-Die nächste For-Schleife berechnet den Faktor \texttt{factor}, indem die Lösungsmatrix mit negativem Vorzeichen an der Stelle der Zählvariable i
+Als nächstes wird der Faktor berechnet, mit dem die Koeffizienten gleich null werden.
+Dies geschieht durch die nächste For-Schleife, welche den Faktor \texttt{factor} berechnet, indem die Lösungsmatrix mit negativem Vorzeichen an der Stelle der Zählvariable i
 und \texttt{zeile} (die Zählvariable der ersten for-Schleife), durch die Lösungsmatrix an der Stelle \texttt{zeile, zeile} geteilt wird.
-Dieser Faktor wird dann an die Methode \texttt{multiplyAndAdd} zusammen mit \texttt{zeile, i} als Parameter übergeben, nachdem
-die For-Schleife durchgelaufen ist, wird die hergestellte triangularisierte Matrix  ausgegeben. Anschließend prüft der Algorithmus
-die triangularisierte Matrix indem durch eine If-Bedingung abgefragt wird, ob die Methode \texttt{checkWievielNullZeilen} auf
-die Matrix angewendet wird, wenn sie ein Sonderfall zurückgibt, bricht der Algorithmus ab.
+Dieser Faktor wird dann an die Methode \texttt{multiplyAndAdd} zusammen mit \texttt{zeile, i} als Parameter übergeben. Nachdem
+die For-Schleife durchgelaufen ist, wird die entstandene triangularisierte Matrix  ausgegeben. \newline Anschließend prüft der Algorithmus
+die triangularisierte Matrix auf Sonderfälle, also ob die Matrix Null-Zeilen hat oder komplett gleich Null ist, indem durch eine Wenn-dann prüfung
+abgefragt wird, ob die Methode \texttt{checkWievielNullZeilen} einen Sonderfall zurückgibt. Wenn sie dies tut, bricht der Algorithmus ab. \newline
 Der letzte Schritt, wird verwendet, um die Matrix durch Rücksubstitution zu lösen.
 Eine For-Schleife läuft von der letzten Spalte bis zur ersten. Zuerst wird in dieser Schleife eine Variable \texttt{double diagonale}
 erstellt, in welcher das aktuelle Diagonalelement gespeichert wird. In der nächsten Zeile iteriert eine weitere For-Schleife
@@ -226,12 +234,7 @@ der rechten Zeile um das Produkt aus dem Wert von \texttt{result} und dem Wert d
 subtrahiert. Als Letztes wird noch der Wert der aktuellen Zeile auf null gesetzt, damit das Gleichungssystem in der Dreiecksform
 bleibt.
 
-
-
-
-
 {\let\clearpage\relax \chapter{Abwägungen}}
-
 \section{Vorteile des Algorithmus}
 Der Gauß-Algorithmus hat klar den Vorteil das er bei Gleichungssystemen mit wenig Koeffizienten
 sehr effektiv ist, d.h er kann die Lösung schnell und einfach berechnen.
@@ -246,10 +249,11 @@ Dies sieht man auch in der vorliegenden Implementation, wobei durch die Verwendu
 und dem rechnen mit denselben gerundeten Zahlen noch größere Rundungsfehler entstehen können.
 Außerdem kann der Algorithmus bei vielen Koeffizienten eine
 sehr hohe Rechenleistung in Anspruch nehmen.
-\chapter{Anwendungsbereiche des Gaußschen-Eliminationsverfahrens in der Informatik}
+
+{\let\clearpage\relax \chapter{Anwendungsbereiche des Gauß'schen \\ Eliminationsverfahrens in der Informatik}}
 Der Algorithmus spielt in der Informatik aufgrund seiner Simplizität eine tragende Rolle in vielen Teilbereichen,
 wie der Kryptografie, der Computergrafik oder der Datenanalyse.
-Die Anwendungsmöglichkeiten, in diesen werden im Folgenden umrissen.
+Eine Auswahl von Anwendungsbereichen wird im Folgenden umrissen.
 \section{Kryptografie}
 Das Gauß'sche Eliminationsverfahren kann verwendet werden, um modulare Gleichungen zu lösen,
 die in der Kryptografie häufig auftreten.
