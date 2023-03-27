@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  26 MAR 2023 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  27 MAR 2023 18:28
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**/tmp/nvim.joel/ntSNx3/1
-(/tmp/nvim.joel/ntSNx3/1
+**Facharbeit.tex
+(./Facharbeit.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
@@ -1278,13 +1278,13 @@ Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30831 strings out of 476091
- 628618 string characters out of 5791548
+ 30829 strings out of 476091
+ 628579 string characters out of 5791548
  2488330 words of memory out of 5000000
  50730 multiletter control sequences out of 15000+600000
  524218 words of font info for 79 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 117i,9n,118p,1144b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,9n,118p,1135b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
