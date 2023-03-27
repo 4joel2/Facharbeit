@@ -34,6 +34,8 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{255,255,255}
 
+\newcommand{\GE}{Gauß'sches Eliminationsverfahren}
+\newcommand{\GA}{Gauß-Algorithmus}
 \lstdefinestyle{codehighligthing}{
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
@@ -56,7 +58,7 @@
 
 
 \title{\LARGE Facharbeit im Grundkurs Informatik  \vspace*{0.5cm} \\
-  \Huge Implementation des Gauß-Algorithmus \vspace*{0.5cm} \\
+  \Huge Implementation des \GA \vspace*{0.5cm} \\
   \LARGE Georg-Büchner-Gymnasium}
 \LARGE \author{Joel Mantik
 \vspace*{0.5cm} \\ Pablo Sonnauer}
@@ -67,12 +69,13 @@
 
 {\let\clearpage\relax \chapter{Einleitung}}
 \begin{quote}
-    "The simplest model in applied mathematics is a system of linear equations. It is also by far the most important."
+    "The simplest model in applied mathematics is a system of linear equations.
+    It is also by far the most important." \\ - GILBERT STRANG
 \end{quote}
 
-Die lineare Algebra stellt eines der wichigsten Felder der Mathematik dar. Wie aus dem Zitat des Mathematikers Gilbert Strang hervorgeht,
+Die lineare Algebra stellt eines der wichtigsten Felder der Mathematik dar. Wie aus dem Zitat des Mathematikers Gilbert Strang hervorgeht,
 sind die linearen Gleichungssysteme trotz ihrer Simplizität eines der wichtigsten Konzepte in der angewandten Mathematik.
-Eines der faszinierendsten Lösungsverfahren dieser Gleichungssysteme ist der Gaußsche Algorithmus,
+Eines der faszinierendsten Lösungsverfahren dieser Gleichungssysteme ist der \GA,
 weil er das Lösen auf einfachste Weise möglich macht. Seit der Entdeckung im frühen 19. Jahrhundert, durch den
 Mathematiker Carl Friedrich Gauß, stellt er eines der elementarsten Lösungsverfahren linearer Gleichungssysteme dar.
 Auch in der Informatik spielt der Algorithmus eine große Rolle, beispielsweise in der Computergrafik. Aus diesen Gründen wird im Folgenden eine Implementationsmöglichkeit
@@ -80,10 +83,8 @@ vorgestellt. Zuerst wird der mathematische Hintergrund erläutert, anschließend
 Vor- bzw. Nachteile abgewägt.
 Weiter werden spezifische Anwendungsmöglichkeiten in der Informatik aufgezeigt und zuletzt ein Fazit gezogen.
 
-\chapter{Theoretische Grundlagen}
-Um die Implementation des Algorithmus nachvollziehen zu können, werden zunächste die mathematischen Grundlagen und Definitonen
-von linearen Gleichungssystemen und dem Algorithmus an sich erläutert.
-\section{Lineare Gleichungssysteme}
+\chapter{Lineare Gleichungssysteme}
+
 Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens
 dem ersten Grad vorkommt.
 Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m*n $ Matrix ist,
@@ -91,11 +92,11 @@ $x$ ein n-dimensionaler Vektor von Unbekannten
 und b ein $m$-dimensionaler Vektor von Konstanten ist.
 Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren.: \cite{1}
 \begin{align}
-\label{eq:linGle}
-    a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &=& b_1 \nonumber \\
-    a_{21}x_{1}+ a_{22}x_{2}+\hdots+ a_{2n}x_{n} &=& b_2 \nonumber\\
-                                                 &\vdots&  \nonumber \\
-    a_{m1}x_{1}+ a_{m2}x_2+\hdots+a_{mn}x_{n} &=& b_{m}
+    \label{eq:linGle}
+    a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &=& b_1 &  \nonumber \\
+    a_{21}x_{1}+ a_{22}x_{2}+\hdots+ a_{2n}x_{n} &=& b_2 &\nonumber\\
+                                                 &\vdots &  \nonumber \\
+    a_{m1}x_{1}+ a_{m2}x_2+\hdots+a_{mn}x_{n} &=& b_{m} &
 \end{align}
 Das Ziel eines solchen linearen Gleichungssystems ist es, eine Lösung für $x$ zu finden, die alle Gleichungen erfüllt.
 Hierbei gibt es drei Arten von Lösungen:
@@ -113,8 +114,8 @@ Hierbei gibt es drei Arten von Lösungen:
 \end{enumerate}
 
 
-\section{Gaußsches Eliminationsverfahren} \label{2.2}
-Gegeben sei das Allgemeine Lineare Gleichungssystem \ref{eq:linGle}.
+{\let\clearpage\relax \chapter{\GE}} \label{2.2}
+Gegeben sei das Allgemeine lineare Gleichungssystem \ref{eq:linGle}.
 Gesucht ist nun die Menge der $ (x_1, \hdots ,x_n ) \in \mathbb{R}^n $, die alle Gleichungen erfüllen.
 Um diese Menge zu finden, geht man folgendermaßen vor:
 \begin{enumerate}
@@ -143,9 +144,9 @@ Um diese Menge zu finden, geht man folgendermaßen vor:
             \end{equation}
         \end{center}
 
-        Eine $ m * n $-Matrix $(A,b)$, wie in \ref{Zeilenstufenform} wird  \textit{Zeilenstufenform} gennant.
+        Eine $ m * n $-Matrix $(A,b)$, wie in \ref{Zeilenstufenform} wird  \textit{Zeilenstufenform} genannt.
         Das \textit{a} steht für eine beliebige reelle Zahl, alle anderen Plätze ohne ein \textit{a} sind von Nullen besetzt.
-        Der erste von Null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt. \\
+        Der erste von null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt. \\
         Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der I-ten Zeile, und alle Einträge
         oberhalb eines Pivot-Elements sind gleich null. Vgl. \cite{5}.
     \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermitteln.
@@ -179,12 +180,11 @@ Das Implementationsdiagramm zeigt den Aufbau: \newline
     - checkWievielNullZeilen(): boolean \\
     - checkObNull(): boolean
   }
-  \umlinherit{Gauß}{Object}
 \end{tikzpicture}
 }
 
 \end{center}
-Die Namen der Methoden wurden so gewählt, dass die Grundfunktion dieser klar sind.
+Es wurden aussagefähige Methodennamen gewählt.
 In der Main Methode des Programms wird ein Parameter übernommen,
 welcher die Datei mit der Koeffizientenmatrix annimmt. Außerdem werden
 in dieser die Methoden \texttt{einlesen(), ausgabe() und gaussAlgo()} ausgeführt.
@@ -209,13 +209,13 @@ und zu dem zu verändernden Koeffizienten addiert wird.
 Weiter gibt es die Methode \texttt{checkObNull()}, welche den Parameter \texttt{zeile (Integer)} annimmt
 und über die Eingangsmartix iteriert und prüft, ob ein Koeffizient den Wert Null hat. Zu diesem Fall wird
 \texttt{true} zurückgegeben, andernfalls \texttt{false}.
-Diese Methode wird später für die Sonderbehandlung von Matrizes verwendet, die entweder eine Null-Zeile haben oder komlett Null sind.
+Diese Methode wird später für die Sonderbehandlung von Matrizes verwendet, die entweder eine Null-Zeile haben oder gleich null sind.
 Anknüpfend gibt es noch die Methode \texttt{checkWievielNullZeilen()}. Diese iteriert, ausgehend von der letzten Zeile,
 über alle Zeilen und prüft, ob alle Koeffizienten in der Zeile gleich null sind. Für jede gefundene Null-Zeile wird ein Counter
 \texttt{nullCounter} erhöht. Wenn diese Zählvariable am Ende der Iteration ungleich Null ist, wird die Konstante \texttt{SONDERFALL} zurückgegeben
 und die Anzahl der Null-Zeilen auf der Konsole ausgegeben, andernfalls wird die Konstante \texttt{NORMALFALL} zurückgegeben.
 Wenn die Matrix an jeder Stelle eine Null hat, wird ebenfalls interveniert und der Sonderfall auf der Konsole ausgegeben.
-Die Methode arbeitet sehr effektiv, denn durch die Pivotisierung kann nach erfolgter Triangularisierung von der letzten Zeile aus iteriert werden, denn
+Die Methode arbeitet sehr effektiv, denn durch die Pivotisierung kann nach erfolgter triangularisierung von der letzten Zeile aus iteriert werden, denn
 wenn es Null-Zeilen gibt so sind diese am Ende.
 
 Die Methode \texttt{gaussAlgo()}, führt den eigentlichen Algorithmus aus.
@@ -250,7 +250,7 @@ bleibt.
 
 {\let\clearpage\relax \chapter{Abwägungen}}
 \section{Vorteile des Algorithmus}
-Der Gauß-Algorithmus hat klar den Vorteil das er bei Gleichungssystemen mit wenig Koeffizienten
+Der \GA hat klar den Vorteil das er bei Gleichungssystemen mit wenig Koeffizienten
 sehr effektiv ist, d.h er kann die Lösung schnell und einfach berechnen.
 Auch ist der Algorithmus in der Programmierung relativ leicht umzusetzen,
 da er nach einfachen Schemata funktioniert, bei welchem wenige Schritte benötigt werden.
@@ -269,7 +269,7 @@ Der Algorithmus spielt in der Informatik aufgrund seiner Simplizität eine trage
 wie der Kryptografie, der Computergrafik oder der Datenanalyse.
 Eine Auswahl von Anwendungsbereichen wird im Folgenden umrissen.
 \section{Kryptografie}
-Das Gauß'sche Eliminationsverfahren kann verwendet werden, um modulare Gleichungen zu lösen,
+Das \GE kann verwendet werden, um modulare Gleichungen zu lösen,
 die in der Kryptografie häufig auftreten.
 Zum Beispiel wird das Verfahren bei der Berechnung von Schlüsseln in asymmetrischen Kryptosystemen wie RSA eingesetzt.
 Hierbei wird mit dem Gauß-Algorithmus eine Primfaktorzerlegung durchgeführt, die dann
@@ -280,7 +280,7 @@ In der 3D-Computergrafik werden 4x4-Matrizen verwendet, um Objekte im Raum zu tr
 Diese Matrizen enthalten Informationen über Translationen, Rotationen und Skalierungen von Objekten.
 Das Gauß'sche Eliminationsverfahren wird verwendet, um die inverse Matrix zu berechnen, die dann verwendet wird,
 um die Transformationsoperationen umzukehren. Die inverse Matrix wird auch dazu verwendet, um Normale von 3D-Objekten zu transformieren,
-um sie in eine konsistente Richtung zu bringen, was wichtig ist für Beleuchtungs- und Schattierungsberechnungen.
+um sie in eine konsistente Richtung zu bringen, was wichtig ist für Beleuchtungs- und Schattierungsberechnungen. Vgl. \cite{6}.
 
 {\let\clearpage\relax \chapter{Fazit}}
 Die lineare Algebra und das Lösen linearer Gleichungssysteme sind fundamentale Konzepte in der angewandten Mathematik
@@ -291,7 +291,7 @@ erläutert, und eine Implementierungsmöglichkeit des Algorithmus wurde vorgeste
 Der Algorithmus hat den Vorteil, dass er das Lösen linearer Gleichungssysteme auf einfachste Weise ermöglicht,
 aber es gibt auch Nachteile wie die Notwendigkeit einer hohen Rechenleistung bei großen Matrizen.
 Dennoch sind die Anwendungsmöglichkeiten in der Informatik zahlreich.
-Zusammenfassend lässt sich sagen, dass der Gaußsche Algorithmus ein wichtiges Werkzeug für
+Zusammenfassend lässt sich sagen, dass der \GA ein wichtiges Werkzeug für
 Mathematiker und Informatiker ist, um komplexe Probleme zu lösen und praktische Anwendungen zu ermöglichen.
 
 

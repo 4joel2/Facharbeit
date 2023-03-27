@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  25 MAR 2023 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  26 MAR 2023 22:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**/tmp/nvim.joel/jcgeUT/2
-(/tmp/nvim.joel/jcgeUT/2
+**/tmp/nvim.joel/ntSNx3/1
+(/tmp/nvim.joel/ntSNx3/1
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
@@ -1106,20 +1106,20 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
 (./Facharbeit.aux)
 \openout1 = `Facharbeit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1169,8 +1169,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Facharbeit.bbl' found.
 
 (./Facharbeit.bbl)
-Package biblatex Info: Reference section=0 on input line 64.
-Package biblatex Info: Reference segment=0 on input line 64.
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1207,12 +1207,12 @@ Package biblatex Info: Reference segment=0 on input line 64.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count497
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1231,262 +1231,46 @@ Kapitel 1.
 ] [2]
 Kapitel 2.
 
-Overfull \hbox (17.14299pt too wide) in paragraph at lines 84--86
-\OT1/cmr/m/n/12 Um die Im-ple-men-ta-ti-on des Al-go-rith-mus nach-voll-zie-hen
- zu k[]onnen, wer-den zun[]achste
+Overfull \hbox (18.78339pt too wide) in paragraph at lines 109--114
+[]\OT1/cmr/m/n/12 Das Glei-chungs-sys-tem hat \OT1/cmr/m/it/12 un-end-lich vie-
+le \OT1/cmr/m/n/12 L[]osungen, wenn es meh-re-re L[]osungen
  []
 
 [3
 
 ]
-Overfull \hbox (18.78339pt too wide) in paragraph at lines 108--113
-[]\OT1/cmr/m/n/12 Das Glei-chungs-sys-tem hat \OT1/cmr/m/it/12 un-end-lich vie-
-le \OT1/cmr/m/n/12 L[]osungen, wenn es meh-re-re L[]osungen
- []
-
-[4]
 Kapitel 3.
+[4]
+Kapitel 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 181.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 182.
+[5]
+Overfull \hbox (23.73183pt too wide) in paragraph at lines 187--220
+\OT1/cmr/m/n/12 Main Me-tho-de die Ein-gangs-ma-trix, die tri-an-gu-la-ri-sier-
+te Ma-trix und die L[]osungsmatrix
+ []
 
-! Package pgf Error: No shape named `Object' is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.182   \umlinherit{Gauß}{Object}
-                                  
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-
-! Package pgf Error: No shape named `Object' is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.182   \umlinherit{Gauß}{Object}
-                                  
-(That was another \errmessage.)
-
-
-! Package pgf Error: No shape named `Object' is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.182   \umlinherit{Gauß}{Object}
-                                  
-(That was another \errmessage.)
-
-
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``Gauß''? on input line
- 182.
-
-[5] [6] [7] [8]
-Kapitel 4.
-[9]
+[6] [7] [8]
 Kapitel 5.
-[10]
+[9]
 Kapitel 6.
+[10]
+Kapitel 7.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) [11]
-(./Quellcode/Gauss.java [12] [13] [14]
+(./Quellcode/Gauss.java [12] [13] [14] [15]) [16]
+Overfull \hbox (5.70706pt too wide) in paragraph at lines 302--302
+[]\OT1/cmr/m/n/12 scratchapixel. \OT1/cmr/m/it/12 The Per-spec-ti-ve and Or-tho
+-gra-phic Pro-jec-ti-on Ma-trix\OT1/cmr/m/n/12 . Letz-
+ []
 
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.194      * Die Methode prüft 
-                                wieviele Nullzeilen die Matrix hat.
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "BC.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.194      * Die Methode prüft 
-                                wieviele Nullzeilen die Matrix hat.
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.195 ...* @return SONDERFALL wird zurückgegeben 
-                                                  wenn die Matrix ein Sonder...
-
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "BC.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.195 ...* @return SONDERFALL wird zurückgegeben 
-                                                  wenn die Matrix ein Sonder...
-
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.196 ...turn NORMALFALL wird sonst zurückgegeben
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "BC.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.196 ...turn NORMALFALL wird sonst zurückgegeben
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.220 ... @param zeile Die Zeile welchhe geprüft 
-                                                  wird
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "BC.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.220 ... @param zeile Die Zeile welchhe geprüft 
-                                                  wird
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.221      * Die Methode prüft 
-                                für jedes Element ob es den Wert Null hat
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "BC.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.221      * Die Methode prüft 
-                                für jedes Element ob es den Wert Null hat
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.221      * Die Methode prüft für 
-                                     jedes Element ob es den Wert Null hat
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "BC.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.221      * Die Methode prüft für 
-                                     jedes Element ob es den Wert Null hat
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-[15]) [16] [17
+[17
 
 ] (./Facharbeit.aux)
 Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
@@ -1494,14 +1278,15 @@ Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30916 strings out of 476091
- 630856 string characters out of 5791548
+ 30831 strings out of 476091
+ 628618 string characters out of 5791548
  2488330 words of memory out of 5000000
- 50816 multiletter control sequences out of 15000+600000
- 523917 words of font info for 78 fonts, out of 8000000 for 9000
+ 50730 multiletter control sequences out of 15000+600000
+ 524218 words of font info for 79 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  117i,9n,118p,1144b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
@@ -1516,10 +1301,10 @@ ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Facharbeit.pdf (18 pages, 215957 bytes).
+Output written on Facharbeit.pdf (18 pages, 225961 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 169 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

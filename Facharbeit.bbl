@@ -99,6 +99,32 @@
       \field{title}{Kryptologie, Algebraische Methoden und Algorithmen}
       \field{year}{2010}
     \endentry
+    \entry{6}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dc9c59f86f12b4038aa9b03352ed010e}{%
+           family={scratchapixel},
+           familyi={s\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc9c59f86f12b4038aa9b03352ed010e}
+      \strng{fullhash}{dc9c59f86f12b4038aa9b03352ed010e}
+      \strng{bibnamehash}{dc9c59f86f12b4038aa9b03352ed010e}
+      \strng{authorbibnamehash}{dc9c59f86f12b4038aa9b03352ed010e}
+      \strng{authornamehash}{dc9c59f86f12b4038aa9b03352ed010e}
+      \strng{authorfullhash}{dc9c59f86f12b4038aa9b03352ed010e}
+      \field{labelalpha}{scr}
+      \field{sortinit}{s}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Letzter Zugriff: 2023-03-26}
+      \field{title}{The Perspective and Orthographic Projection Matrix}
+      \verb{urlraw}
+      \verb https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/projection-matrix-introduction.html
+      \endverb
+      \verb{url}
+      \verb https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/projection-matrix-introduction.html
+      \endverb
+    \endentry
     \entry{5}{book}{}
       \name{author}{1}{}{%
         {{hash=d13b46dd23a186286393e5b4475f319e}{%
