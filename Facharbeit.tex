@@ -34,8 +34,8 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{255,255,255}
 
-\newcommand{\GE}{Gauß'sches Eliminationsverfahren}
-\newcommand{\GA}{Gauß-Algorithmus}
+\newcommand{\GE}{Gauß'sches Eliminationsverfahren }
+\newcommand{\GA}{Gauß-Algorithmus }
 \lstdefinestyle{codehighligthing}{
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
@@ -75,38 +75,38 @@
 
 Die lineare Algebra stellt eines der wichtigsten Felder der Mathematik dar. Wie aus dem Zitat des Mathematikers Gilbert Strang hervorgeht,
 sind die linearen Gleichungssysteme trotz ihrer Simplizität eines der wichtigsten Konzepte in der angewandten Mathematik.
-Eines der faszinierendsten Lösungsverfahren dieser Gleichungssysteme ist der \GA,
-weil er das Lösen auf einfachste Weise möglich macht. Seit der Entdeckung im frühen 19. Jahrhundert, durch den
-Mathematiker Carl Friedrich Gauß, stellt er eines der elementarsten Lösungsverfahren linearer Gleichungssysteme dar.
+Eines der faszinierendsten Lösungsverfahren dieser Gleichungssysteme ist der Gauß-Algorithmus,
+da er das Lösen auf einfachste Weise möglich macht. Seit seiner Entdeckung im frühen 19. Jahrhundert durch den
+Mathematiker Carl Friedrich Gauß stellt er eines der elementarsten Lösungsverfahren Linearer Gleichungssysteme dar.
 Auch in der Informatik spielt der Algorithmus eine große Rolle, beispielsweise in der Computergrafik. Aus diesen Gründen wird im Folgenden eine Implementationsmöglichkeit
 vorgestellt. Zuerst wird der mathematische Hintergrund erläutert, anschließend der Quellcode des Algorithmus vorgestellt und
-Vor- bzw. Nachteile abgewägt.
-Weiter werden spezifische Anwendungsmöglichkeiten in der Informatik aufgezeigt und zuletzt ein Fazit gezogen.
+Vor- und Nachteile abgewogen.
+Weiterhin werden spezifische Anwendungsmöglichkeiten in der Informatik aufgezeigt und zuletzt wird ein Fazit gezogen.
 
 \chapter{Lineare Gleichungssysteme}
 
 Ein lineares Gleichungssystem ist eine Sammlung von Gleichungen, in denen jede Unbekannte mit höchstens
 dem ersten Grad vorkommt.
-Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine $ m*n $ Matrix ist,
+Es kann in der Form $ A_x = b $ geschrieben werden, wobei $A$ eine Matrix der Form $ m * n$,
 $x$ ein n-dimensionaler Vektor von Unbekannten
-und b ein $m$-dimensionaler Vektor von Konstanten ist.
+und b ein $m$-dimensionaler Vektor von Konstanten sei.
 Ein allgemeines lineares Gleichungssystem lässt sich wie folgt definieren.: \cite{1}
 \begin{align}
     \label{eq:linGle}
-    a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &=& b_1 &  \nonumber \\
-    a_{21}x_{1}+ a_{22}x_{2}+\hdots+ a_{2n}x_{n} &=& b_2 &\nonumber\\
-                                                 &\vdots &  \nonumber \\
-    a_{m1}x_{1}+ a_{m2}x_2+\hdots+a_{mn}x_{n} &=& b_{m} &
+    a_{11}x_{1}+ a_{12}x_{2}+\hdots+ a_{1n}x_{n} &= b_1   \nonumber \\
+    a_{21}x_{1}+ a_{22}x_{2}+\hdots+ a_{2n}x_{n} &= b_2 \nonumber\\
+                                                 &\vdots   \nonumber \\
+    a_{m1}x_{1}+ a_{m2}x_2+\hdots+a_{mn}x_{n} &= b_{m}
 \end{align}
 Das Ziel eines solchen linearen Gleichungssystems ist es, eine Lösung für $x$ zu finden, die alle Gleichungen erfüllt.
 Hierbei gibt es drei Arten von Lösungen:
 \begin{enumerate}
     \item Das Gleichungssystem hat genau \textit{eine} Lösung;
         es gibt genau eine Lösung, welche alle Gleichungen im System
-        erfüllt. Die Lösungsmenge ist z. B. : $\mathbb{L} = \{ (x,y,z)| (1,2,3)\} $.
+        erfüllt. Die Lösungsmenge ist zum Beispiel: $\mathbb{L} = \{ (x,y,z)| (1,2,3)\} $.
     \item Das Gleichungssystem hat \textit{keine} Lösung, wenn es keine Lösung gibt,
         die alle Gleichungen erfüllt. Die Lösungsmenge ist eine leere Menge: $ \mathbb{L}= \emptyset$.
-    \item Das Gleichungssystem hat \textit{unendlich viele} Lösungen, wenn es mehrere Lösungen gibt
+    \item Das Gleichungssystem hat \textit{unendlich viele} Lösungen, wenn es mehrere Lösungen gibt,
         die alle Gleichungen im System erfüllen.
         Hierbei sind die verschiedenen Variablen möglicherweise voneinander abhängig.
         Die Lösungsmenge sieht beispielsweise wie folgt aus:
@@ -117,9 +117,9 @@ Hierbei gibt es drei Arten von Lösungen:
 {\let\clearpage\relax \chapter{\GE}} \label{2.2}
 Gegeben sei das Allgemeine lineare Gleichungssystem \ref{eq:linGle}.
 Gesucht ist nun die Menge der $ (x_1, \hdots ,x_n ) \in \mathbb{R}^n $, die alle Gleichungen erfüllen.
-Um diese Menge zu finden, geht man folgendermaßen vor:
+Um diese Menge zu finden, wird folgendermaßen vorgegangen:
 \begin{enumerate}
-    \item Das Gleichungssystem in Die erweiterte Koeffizientenmatrix $ (A, b) $ bringen. \cite{2}:
+    \item Das Gleichungssystem in die erweiterte Koeffizientenmatrix $ (A, b) $ umschreiben, \cite{2}:
         \begin{equation}
             (A, b):=
             \begin{pmatrix}
@@ -146,16 +146,16 @@ Um diese Menge zu finden, geht man folgendermaßen vor:
 
         Eine $ m * n $-Matrix $(A,b)$, wie in \ref{Zeilenstufenform} wird  \textit{Zeilenstufenform} genannt.
         Das \textit{a} steht für eine beliebige reelle Zahl, alle anderen Plätze ohne ein \textit{a} sind von Nullen besetzt.
-        Der erste von null verschiedene Eintrag in jeder Zeile ist 1. Dieser Eintrag wird das Pivot-Element der Zeile genannt. \\
-        Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der I-ten Zeile, und alle Einträge
+        Der erste von null verschiedene Eintrag in jeder Zeile ist eins. Dieser Eintrag wird das Pivot-Element der Zeile genannt. \\
+        Das Pivot-Element der $(i + 1)$-ten Zeile steht immer rechts des Pivot-Elements der I-ten Zeile, alle Einträge
         oberhalb eines Pivot-Elements sind gleich null. Vgl. \cite{5}.
     \item Nun lassen sich durch Rücksubstitution die Werte für die Variablen ermitteln.
-        Man teilt die letzte Spalte durch den Wert des Koeffizienten, sodass die Variable alleine steht.
-        Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, dann wird analog zum ersten Schritt vorgegangen.
+        Es wird die letzte Spalte durch den Wert des Koeffizienten geteilt, sodass die Variable alleine steht.
+        Der gefundene Wert wird dann in die nächst höhere Zeile eingesetzt, anschließend wird analog zum ersten Schritt vorgegangen.
 \end{enumerate}
 
 {\let\clearpage\relax \chapter{Erläuterung des Quellcodes}}
-Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache "Java" verwendet.
+Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache \texttt{"Java"} verwendet.
 
 Das Implementationsdiagramm zeigt den Aufbau: \newline
 \begin{center}
@@ -177,8 +177,8 @@ Das Implementationsdiagramm zeigt den Aufbau: \newline
     + ausgabe(): void \\
     + gaussAlgo(): void \\
     + multiplyAndAdd(lineOne: int, lineTwo: int, \\ factor: double):void \\
-    - checkWievielNullZeilen(): boolean \\
-    - checkObNull(): boolean
+    + checkWievielNullZeilen(): boolean \\
+    + checkObNull(): boolean
   }
 \end{tikzpicture}
 }
@@ -193,105 +193,105 @@ und die Lösungsmatrix aus. \newline
 Die Methode \texttt{einlesen()} liest die Koeffizientenmatrix aus der Datei ein,
 dabei wird eine Liste erstellt, in welcher alle Zeilen der eingelesenen Datei gespeichert werden.
 Die Datei kann Kommentare und Leerzeilen enthalten, daher werden durch eine For-Schleife alle Leerzeichen und Kommentare entfernt.
-Des Weiteren werden die Kommata zu Punkten gemacht,
+Des Weiteren werden die Kommata in Punkte umgewandelt,
 um das Funktionieren des Algorithmus auch auf anderen Systemen zu gewährleisten.
 Weiterhin wird die Anzahl der Spalten in der Variable \texttt{countSpalten},
 und die Anzahl der Zeilen in \texttt{countZeilen} gespeichert und
-im Zuge dessen auch die \textit{Eingangsmatrix} \texttt{koeff[][]}und die \textit{Lösungsmatrix} \texttt{solMatrix[][]}initialisiert.
+im Zuge dessen werden auch die \textit{Eingangsmatrix} \texttt{koeff[][]}und die \textit{Lösungsmatrix} \texttt{solMatrix[][]} initialisiert.
 Die Methode \texttt{ausgabe()} nimmt zwei Parameter an, das zweidimensionale Array \texttt{double mx}
 und den String \texttt{matrixName}. Beide werden durch eine For-Schleife auf der Konsole ausgegeben.
 Die Methode \texttt{multiplyAndAdd()}, welche die Parameter \texttt{lineOne, lineTwo (Integer)}
-und den \texttt{double factor} annimmt, wird verwendet, um die Koeffizienten zu einer Null zu machen.
+und den \texttt{double factor} annimmt, wird verwendet, um die Koeffizienten auf den Wert null zu bringen.
 Dabei wird durch eine For-Schleife über die Spalten der Matrix iteriert
-und dabei der Koeffizient an der Stelle von \texttt{lineTwo} und \texttt{spalten} auf den Wert Null gebracht.
+und dabei der Koeffizient an der Stelle von \texttt{lineTwo} und \texttt{spalten} auf den Wert null gebracht.
 Dies geschieht, indem die Matrix an der Stelle \texttt{lineOne} und \texttt{spalten} mit dem Parameter \texttt{factor} multipliziert
 und zu dem zu verändernden Koeffizienten addiert wird.
 Weiter gibt es die Methode \texttt{checkObNull()}, welche den Parameter \texttt{zeile (Integer)} annimmt
-und über die Eingangsmartix iteriert und prüft, ob ein Koeffizient den Wert Null hat. Zu diesem Fall wird
+und über die Eingangsmartix iteriert und prüft, ob ein Koeffizient den Wert null hat. In diesem Fall wird
 \texttt{true} zurückgegeben, andernfalls \texttt{false}.
-Diese Methode wird später für die Sonderbehandlung von Matrizes verwendet, die entweder eine Null-Zeile haben oder gleich null sind.
+Diese Methode wird später für die Sonderbehandlung von Matrizen verwendet, die entweder eine Null-Zeile haben oder gleich null sind.
 Anknüpfend gibt es noch die Methode \texttt{checkWievielNullZeilen()}. Diese iteriert, ausgehend von der letzten Zeile,
 über alle Zeilen und prüft, ob alle Koeffizienten in der Zeile gleich null sind. Für jede gefundene Null-Zeile wird ein Counter
 \texttt{nullCounter} erhöht. Wenn diese Zählvariable am Ende der Iteration ungleich Null ist, wird die Konstante \texttt{SONDERFALL} zurückgegeben
 und die Anzahl der Null-Zeilen auf der Konsole ausgegeben, andernfalls wird die Konstante \texttt{NORMALFALL} zurückgegeben.
 Wenn die Matrix an jeder Stelle eine Null hat, wird ebenfalls interveniert und der Sonderfall auf der Konsole ausgegeben.
-Die Methode arbeitet sehr effektiv, denn durch die Pivotisierung kann nach erfolgter triangularisierung von der letzten Zeile aus iteriert werden, denn
-wenn es Null-Zeilen gibt so sind diese am Ende.
+Die Methode arbeitet sehr effektiv, denn durch die Pivotisierung kann nach erfolgter Triangularisierung von der letzten Zeile aus iteriert werden, denn
+wenn es Null-Zeilen gibt, so sind diese am Ende.
 
-Die Methode \texttt{gaussAlgo()}, führt den eigentlichen Algorithmus aus.
-Als Erstes wird die Eingangsmartix, also \texttt{koeff[][]}, durch eine For-Schleife, in die Lösungsmatrix \texttt{solMatrix[][]} kopiert, damit am Ende
+Die Methode \texttt{gaussAlgo()} führt den eigentlichen Algorithmus aus.
+Als Erstes wird die Eingangsmartix, also \texttt{koeff[][]}, durch eine For-Schleife in die Lösungsmatrix \texttt{solMatrix[][]} kopiert, damit am Ende
 beide ausgegeben werden können.
-Anschließend findet die Pivotisierung der Matrix statt. Dies geschieht, indem zuerst,
+Anschließend findet die Pivotisierung der Matrix statt. Dies geschieht, indem zuerst
 eine Variable \texttt{maxZeile (Integer)} erzeugt und mit der Zählvariable \texttt{zeile} initialisiert wird.
 Diese wird verwendet, um die Zeile mit dem größten Koeffizienten zu finden.
 In der darauf folgenden For-Schleife findet die eigentliche Pivotisierung statt.
 Sie sucht in der aktuellen Spalte nach dem Element mit dem größten, absoluten Wert
-und speichert diesen, wenn der größere Wert in der Zeile unter der aktuellen Zeile ist in der Variable \texttt{maxZeile}.
-Anschließend wird geprüft ob die zuvor initialisierte maxZeile ungleich dem Wert der Variable \texttt{zeile} ist.
+und speichert diesen, wenn der größere Wert in der Zeile unter der aktuellen Zeile ist, in der Variable \texttt{maxZeile}.
+Anschließend wird geprüft, ob die zuvor initialisierte maxZeile ungleich dem Wert der Variable \texttt{zeile} ist.
 Wenn dem so ist, werden die Zeilen mithilfe einer temporären Variable getauscht, sodass am Ende die
 Zahl mit dem größten Koeffizienten oben steht.
-Als nächstes wird der Faktor berechnet, mit dem die Koeffizienten gleich null werden.
+Als Nächstes wird der Faktor berechnet, mit dem die Koeffizienten gleich null werden.
 Dies geschieht durch die nächste For-Schleife, welche den Faktor \texttt{factor} berechnet, indem die Lösungsmatrix mit negativem Vorzeichen an der Stelle der Zählvariable i
 und \texttt{zeile} (die Zählvariable der ersten for-Schleife), durch die Lösungsmatrix an der Stelle \texttt{zeile, zeile} geteilt wird.
 Dieser Faktor wird dann an die Methode \texttt{multiplyAndAdd} zusammen mit \texttt{zeile, i} als Parameter übergeben. Nachdem
 die For-Schleife durchgelaufen ist, wird die entstandene triangularisierte Matrix  ausgegeben. \newline Anschließend prüft der Algorithmus
 die triangularisierte Matrix auf Sonderfälle, also ob die Matrix Null-Zeilen hat oder komplett gleich Null ist, indem durch eine Wenn-dann prüfung
 abgefragt wird, ob die Methode \texttt{checkWievielNullZeilen} einen Sonderfall zurückgibt. Wenn sie dies tut, bricht der Algorithmus ab. \newline
-Der letzte Schritt, wird verwendet, um die Matrix durch Rücksubstitution zu lösen.
-Eine For-Schleife läuft von der letzten Spalte bis zur ersten. Zuerst wird in dieser Schleife eine Variable \texttt{double diagonale}
+Der letzte Schritt wird verwendet, um die Matrix durch Rücksubstitution zu lösen.
+Eine For-Schleife läuft von der letzten bis zur ersten Spalte. Zuerst wird in dieser Schleife eine Variable \texttt{double diagonale}
 erstellt, in welcher das aktuelle Diagonalelement gespeichert wird. In der nächsten Zeile iteriert eine weitere For-Schleife
 über die Matrix und teilt bei jeder Iteration den Wert des aktuellen Koeffizienten durch den Wert in \texttt{diagonale}.
 Dadurch entsteht die Dreiecksform, bei welcher jedes Element in dieser den Wert Eins haben soll.
 Weitergehend wird der Wert des Tupels in der Variable \texttt{double result} gespeichert.
 Durch eine weitere For-Schleife wird die über alle Zeilen unter der aktuellen iteriert, bei jeder Iteration wird der Wert
 der rechten Zeile um das Produkt aus dem Wert von \texttt{result} und dem Wert des Elements aus der aktuellen Spalte der Zeile
-subtrahiert. Als Letztes wird noch der Wert der aktuellen Zeile auf null gesetzt, damit das Gleichungssystem in der Dreiecksform
+subtrahiert. Als Letztes wird der Wert der aktuellen Zeile auf null gesetzt, damit das Gleichungssystem in der Dreiecksform
 bleibt.
 
 {\let\clearpage\relax \chapter{Abwägungen}}
 \section{Vorteile des Algorithmus}
-Der \GA hat klar den Vorteil das er bei Gleichungssystemen mit wenig Koeffizienten
-sehr effektiv ist, d.h er kann die Lösung schnell und einfach berechnen.
+Der \GA  hat klar den Vorteil, dass er bei Gleichungssystemen mit wenig Koeffizienten
+sehr effektiv ist, das heißt er kann die Lösung schnell und einfach berechnen.
 Auch ist der Algorithmus in der Programmierung relativ leicht umzusetzen,
-da er nach einfachen Schemata funktioniert, bei welchem wenige Schritte benötigt werden.
+da er nach einfachen Schemata funktioniert, bei welchen wenige Schritte benötigt werden.
+Ein weiterer Vorteil ist, dass der Algorithmus durch die Pivotisierung eine gute numerische Stabilität bekommt.
 \section{Nachteile des Algorithmus}
-Zum einen kann es durch die Verwendung vom Datentyp Double und die mehrfache Rechnung mit denselben Werten zu Rundungsfehlern kommen.
-Zum anderen hat der Algorithmus bei komplizierten Martizen mit vielen Zeilen und Spalten eine große Laufzeit,
+Zum einen kann es durch die Verwendung vom Datentyp \texttt{double} und die mehrfache Rechnung mit denselben Werten zu Rundungsfehlern kommen.
+Zum anderen hat der Algorithmus bei komplizierten Matrizen mit vielen Zeilen und Spalten eine große Laufzeit,
 die Worstcase Laufzeit würde aufgrund von doppelten For-Schleifen $ O(n^2) $ betragen.
-Nachteile des Algorithmus sind zum einen, dass bei schlecht konditionierten Gleichungssystemen Rundungsfehler auftreten können.
-Dies sieht man auch in der vorliegenden Implementation, wobei durch die Verwendung vom Datentyp double
-und dem rechnen mit denselben gerundeten Zahlen noch größere Rundungsfehler entstehen können.
 Außerdem kann der Algorithmus bei vielen Koeffizienten eine
 sehr hohe Rechenleistung in Anspruch nehmen.
+Ein weiterer Nachteil dieser Implementation ist, dass bei einer Matrix wie in \texttt{beispiel2.txt}, eine Singularität auftritt, es wird -9.223372036854776E14 und sonst zwei
+Null-Zeilen ausgegeben, was daran liegen könnte das der Computer aufgrund der vorher gerundeten Zahlen numerisch ungenau rechnet. Dies herauszufinden ist allerdings nicht im Rahmen dieser Arbeit.
 
 {\let\clearpage\relax \chapter{Anwendungsbereiche des Gauß'schen \\ Eliminationsverfahrens in der Informatik}}
-Der Algorithmus spielt in der Informatik aufgrund seiner Simplizität eine tragende Rolle in vielen Teilbereichen,
-wie der Kryptografie, der Computergrafik oder der Datenanalyse.
+Der Algorithmus spielt in der Informatik aufgrund seiner Simplizität in vielen Teilbereichen,
+wie der Kryptografie, der Computergrafik oder der Datenanalyse eine tragende Rolle.
 Eine Auswahl von Anwendungsbereichen wird im Folgenden umrissen.
 \section{Kryptografie}
-Das \GE kann verwendet werden, um modulare Gleichungen zu lösen,
+Das Gauß'sche Eliminationsverfahren kann verwendet werden, um modulare Gleichungen zu lösen,
 die in der Kryptografie häufig auftreten.
 Zum Beispiel wird das Verfahren bei der Berechnung von Schlüsseln in asymmetrischen Kryptosystemen wie RSA eingesetzt.
 Hierbei wird mit dem Gauß-Algorithmus eine Primfaktorzerlegung durchgeführt, die dann
-verwendet, um Schlüssel in asymmetrischen Kryptosystemen zu verwenden. Mehr Informationen in \cite{3} vgl. Kapitel 11.4.3.
+verwendet wird, um Schlüssel in asymmetrischen Kryptosystemen zu verwenden. Vgl. \cite{3} Kapitel 11.4.3.
 
 \section{Computergrafik}
 In der 3D-Computergrafik werden 4x4-Matrizen verwendet, um Objekte im Raum zu transformieren.
 Diese Matrizen enthalten Informationen über Translationen, Rotationen und Skalierungen von Objekten.
-Das Gauß'sche Eliminationsverfahren wird verwendet, um die inverse Matrix zu berechnen, die dann verwendet wird,
-um die Transformationsoperationen umzukehren. Die inverse Matrix wird auch dazu verwendet, um Normale von 3D-Objekten zu transformieren,
-um sie in eine konsistente Richtung zu bringen, was wichtig ist für Beleuchtungs- und Schattierungsberechnungen. Vgl. \cite{6}.
+Das Gauß'sche Eliminationsverfahren wird verwendet, um die inverse Matrix zu berechnen, die dann angewendet wird,
+um die Transformationsoperationen umzukehren. Sie wird auch dazu benutzt, um Normale von 3D-Objekten zu transformieren,
+um sie in eine konsistente Richtung zu bringen, was wichtig für Beleuchtungs- und Schattierungsberechnungen ist. Vgl. \cite{6}.
 
 {\let\clearpage\relax \chapter{Fazit}}
-Die lineare Algebra und das Lösen linearer Gleichungssysteme sind fundamentale Konzepte in der angewandten Mathematik
-und finden auch in der Informatik weitreichende Anwendungen. Der Gaußsche Algorithmus ist eines der elementarsten und faszinierendsten Verfahren
-zur Lösung linearer Gleichungssysteme und hat seit seiner Entdeckung im frühen 19. Jahrhundert große Bedeutung erlangt.
-Der mathematische Hintergrund und die Definitionen linearer Gleichungssysteme sowie des Gaußschen Algorithmus wurden
-erläutert, und eine Implementierungsmöglichkeit des Algorithmus wurde vorgestellt.
-Der Algorithmus hat den Vorteil, dass er das Lösen linearer Gleichungssysteme auf einfachste Weise ermöglicht,
-aber es gibt auch Nachteile wie die Notwendigkeit einer hohen Rechenleistung bei großen Matrizen.
+Die lineare Algebra und das Lösen Linearer Gleichungssysteme sind fundamentale Konzepte in der angewandten Mathematik
+und finden auch in der Informatik weitreichende Anwendungen. Der \GA  ist eines der elementarsten und faszinierendsten Verfahren
+zur Lösung Linearer Gleichungssysteme und hat seit seiner Entdeckung im frühen 19. Jahrhundert große Bedeutung erlangt.
+Der mathematische Hintergrund und die Definitionen Linearer Gleichungssysteme sowie des Gaußschen Algorithmus wurden
+erläutert sowie eine Implementierungsmöglichkeit des Algorithmus vorgestellt.
+Er hat den Vorteil, dass er das Lösen Linearer Gleichungssysteme auf einfachste Weise ermöglicht,
+aber es gibt auch Nachteile, wie die Notwendigkeit einer hohen Rechenleistung bei großen Matrizen.
 Dennoch sind die Anwendungsmöglichkeiten in der Informatik zahlreich.
-Zusammenfassend lässt sich sagen, dass der \GA ein wichtiges Werkzeug für
+Zusammenfassend lässt sich sagen, dass der \GA  ein wichtiges Werkzeug für
 Mathematiker und Informatiker ist, um komplexe Probleme zu lösen und praktische Anwendungen zu ermöglichen.
 
 
@@ -299,4 +299,14 @@ Mathematiker und Informatiker ist, um komplexe Probleme zu lösen und praktische
 \footnotesize
 \lstinputlisting[language=Java, caption=Quellcode des Gauß-Algorithmus]{./Quellcode/Gauss.java}
 \printbibliography
+\vspace*{\fill}
+\vspace*{5pt}
+\hrule
+\vspace{5pt}
+\begin{normalsize}
+    \textbf{Satz:}
+    \LaTeX
+\end{normalsize}
+\newpage
+\includegraphics[width=\textwidth]{Eigenständig.jpeg}
 \end{document}

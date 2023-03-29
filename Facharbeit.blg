@@ -1,12 +1,12 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'Facharbeit.blg'
-[83] biber:340> INFO - === So Mär 26, 2023, 18:40:36
-[96] Biber.pm:418> INFO - Reading 'Facharbeit.bcf'
-[170] Biber.pm:978> INFO - Found 5 citekeys in bib section 0
-[185] Biber.pm:4401> INFO - Processing section 0
-[195] Biber.pm:4592> INFO - Looking for bibtex file '../Facharbeit/literatur.bib' for section 0
-[195] bibtex.pm:1713> INFO - LaTeX decoding ...
-[200] bibtex.pm:1518> INFO - Found BibTeX data source '../Facharbeit/literatur.bib'
+[81] biber:340> INFO - === Di Mär 28, 2023, 17:59:31
+[94] Biber.pm:418> INFO - Reading 'Facharbeit.bcf'
+[168] Biber.pm:978> INFO - Found 5 citekeys in bib section 0
+[183] Biber.pm:4401> INFO - Processing section 0
+[193] Biber.pm:4592> INFO - Looking for bibtex file '../Facharbeit/literatur.bib' for section 0
+[194] bibtex.pm:1713> INFO - LaTeX decoding ...
+[199] bibtex.pm:1518> INFO - Found BibTeX data source '../Facharbeit/literatur.bib'
 [251] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
 [251] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
 [251] Biber.pm:4221> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'de-DE'

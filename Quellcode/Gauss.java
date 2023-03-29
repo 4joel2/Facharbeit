@@ -36,7 +36,7 @@ public class Gauss {
 
         einlesen();
         ausgabe(koeff, "Eingangsmatrix");
-        gaussAlgo1();
+        gaussAlgo();
         ausgabe(solMatrix, "Loesungsmatrix");
     }
 
@@ -105,7 +105,7 @@ public class Gauss {
     /**
      * Die Methode gaussAlgo fuehrt den eigentlichen Algorithmus aus
      */
-    private static void gaussAlgo1() {
+    private static void gaussAlgo() {
         for (int i = 0; i < countZeilen; i++) {
             for (int j = 0; j < countSpalten; j++) {
                 solMatrix[i][j] = koeff[i][j];
