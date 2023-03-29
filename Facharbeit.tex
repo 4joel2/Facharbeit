@@ -155,9 +155,10 @@ Um diese Menge zu finden, wird folgendermaßen vorgegangen:
 \end{enumerate}
 
 {\let\clearpage\relax \chapter{Erläuterung des Quellcodes}}
-Für die im Folgenden dargelegte Implementation und Analyse des Algorithmus wurde die Programmiersprache \texttt{"Java"} verwendet.
+Für die im Folgenden dargelegte Implementation des Algorithmus wurde die Programmiersprache \texttt{"Java"} verwendet. \newpage
 
-Das Implementationsdiagramm zeigt den Aufbau: \newline
+\begin{figure}
+    \label{IMpl}
 \begin{center}
 {\ttfamily
 \begin{tikzpicture}[scale=0.6]
@@ -172,24 +173,26 @@ Das Implementationsdiagramm zeigt den Aufbau: \newline
     - countZeilen: int \\
     - SONDERFALL: boolean
   }{
-    + main(args: String[]): void \\
-    + einlesen(): void \\
-    + ausgabe(): void \\
-    + gaussAlgo(): void \\
-    + multiplyAndAdd(lineOne: int, lineTwo: int, \\ factor: double):void \\
-    + checkWievielNullZeilen(): boolean \\
-    + checkObNull(): boolean
+    - main(args: String[]): void \\
+    - einlesen(): void \\
+    - ausgabe(): void \\
+    - gaussAlgo(): void \\
+    - multiplyAndAdd(lineOne: int, lineTwo: int, \\ factor: double):void \\
+    - checkWievielNullZeilen(): boolean \\
+    - checkObNull(): boolean
   }
 \end{tikzpicture}
 }
-
+\caption{Implementationsdiagramm des \GA}
 \end{center}
+\end{figure}
+Das obige Implementationsdiagramm zeigt den grundlegenden Aufbau.
 Es wurden aussagefähige Methodennamen gewählt.
 In der Main Methode des Programms wird ein Parameter übernommen,
 welcher die Datei mit der Koeffizientenmatrix annimmt. Außerdem werden
 in dieser die Methoden \texttt{einlesen(), ausgabe() und gaussAlgo()} ausgeführt.
 Die Methode \texttt{ausgabe()} gibt in der Main Methode die Eingangsmatrix, die triangularisierte Matrix
-und die Lösungsmatrix aus. \newline
+und die Lösungs-\\matrix aus. \newline
 Die Methode \texttt{einlesen()} liest die Koeffizientenmatrix aus der Datei ein,
 dabei wird eine Liste erstellt, in welcher alle Zeilen der eingelesenen Datei gespeichert werden.
 Die Datei kann Kommentare und Leerzeilen enthalten, daher werden durch eine For-Schleife alle Leerzeichen und Kommentare entfernt.
@@ -303,10 +306,8 @@ Mathematiker und Informatiker ist, um komplexe Probleme zu lösen und praktische
 \vspace*{5pt}
 \hrule
 \vspace{5pt}
-\begin{normalsize}
     \textbf{Satz:}
     \LaTeX
-\end{normalsize}
 \newpage
 \includegraphics[width=\textwidth]{Eigenständig.jpeg}
 \end{document}

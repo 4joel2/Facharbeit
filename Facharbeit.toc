@@ -1,5 +1,5 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {chapter}{\numberline {1}Einleitung}{1}{}%
+\contentsline {chapter}{\numberline {1}Einleitung}{2}{}%
 \contentsline {chapter}{\numberline {2}Lineare Gleichungssysteme}{3}{}%
 \contentsline {chapter}{\numberline {3}Gauß'sches Eliminationsverfahren }{4}{}%
 \contentsline {chapter}{\numberline {4}Erläuterung des Quellcodes}{5}{}%
@@ -8,5 +8,5 @@
 \contentsline {section}{\numberline {5.2}Nachteile des Algorithmus}{9}{}%
 \contentsline {chapter}{\numberline {6}Anwendungsbereiche des Gauß'schen \\ Eliminationsverfahrens in der Informatik}{10}{}%
 \contentsline {section}{\numberline {6.1}Kryptografie}{10}{}%
-\contentsline {section}{\numberline {6.2}Computergrafik}{11}{}%
+\contentsline {section}{\numberline {6.2}Computergrafik}{10}{}%
 \contentsline {chapter}{\numberline {7}Fazit}{11}{}%
