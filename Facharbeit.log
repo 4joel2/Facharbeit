@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  29 MAR 2023 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  29 MAR 2023 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1242,11 +1242,22 @@ le \OT1/cmr/m/n/12 L[]osungen, wenn es meh-re-re L[]osungen
 Kapitel 3.
 [4]
 Kapitel 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
 [5]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 183.
- [6]
-Overfull \hbox (23.34348pt too wide) in paragraph at lines 224--253
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 182.
+
+Overfull \hbox (23.73183pt too wide) in paragraph at lines 187--220
+\OT1/cmr/m/n/12 Main Me-tho-de die Ein-gangs-ma-trix, die tri-an-gu-la-ri-sier-
+te Ma-trix und die L[]osungsmatrix
+ []
+
+[6]
+Overfull \hbox (23.34348pt too wide) in paragraph at lines 221--250
 \OT1/cmr/m/n/12 wird die Ein-gangs-mar-tix, al-so \OT1/cmtt/m/n/12 koeff[][]\OT
 1/cmr/m/n/12 , durch ei-ne For-Schleife in die L[]osungsmatrix
  []
@@ -1257,11 +1268,11 @@ Kapitel 5.
 Kapitel 6.
 [10]
 Kapitel 7.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+[11] (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [11]
+)
 (./Quellcode/Gauss.java [12] [13] [14] [15]) [16]
-Overfull \hbox (5.70706pt too wide) in paragraph at lines 305--305
+Overfull \hbox (5.70706pt too wide) in paragraph at lines 302--302
 []\OT1/cmr/m/n/12 scratchapixel. \OT1/cmr/m/it/12 The Per-spec-ti-ve and Or-tho
 -gra-phic Pro-jec-ti-on Ma-trix\OT1/cmr/m/n/12 . Letz-
  []
@@ -1272,10 +1283,10 @@ Overfull \hbox (5.70706pt too wide) in paragraph at lines 305--305
 <Eigenständig.jpeg, id=105, 1027.84pt x 394.47375pt>
 File: Eigenständig.jpeg Graphic file (type jpg)
 <use Eigenständig.jpeg>
-Package pdftex.def Info: Eigenständig.jpeg  used on input line 312.
+Package pdftex.def Info: Eigenständig.jpeg  used on input line 309.
 (pdftex.def)             Requested size: 412.56497pt x 158.34045pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 312--313
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 309--310
 [][] 
  []
 
@@ -1287,11 +1298,11 @@ Package logreq Info: Writing requests to 'Facharbeit.run.xml'.
 Here is how much of TeX's memory you used:
  30845 strings out of 476091
  628821 string characters out of 5791548
- 2488330 words of memory out of 5000000
+ 2472330 words of memory out of 5000000
  50741 multiletter control sequences out of 15000+600000
  525171 words of font info for 83 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 117i,10n,118p,1135b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,9n,118p,1135b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1311,7 +1322,7 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2022/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2022/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Facharbeit.pdf (19 pages, 322355 bytes).
+Output written on Facharbeit.pdf (19 pages, 322545 bytes).
 PDF statistics:
  190 PDF objects out of 1000 (max. 8388607)
  112 compressed objects within 2 object streams
